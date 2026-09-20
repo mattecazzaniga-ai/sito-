@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --color-red: #e0132b;
+  --color-red-dark: #a80f21;
+  --color-red-light: #ff4757;
+
+  --color-ink: #0a0a0b;
+  --color-anthracite: #17171a;
+  --color-anthracite-2: #202024;
+  --color-anthracite-3: #2b2b30;
+
+  --color-white: #ffffff;
+  --color-paper: #fafafa;
+
+  --color-neutral-100: #f4f4f5;
+  --color-neutral-200: #e4e4e7;
+  --color-neutral-300: #d4d4d8;
+  --color-neutral-400: #a1a1aa;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #52525b;
+  --color-neutral-700: #3f3f46;
+  --color-neutral-800: #27272a;
+  --color-neutral-900: #18181b;
+
+  --background: var(--color-white);
+  --foreground: var(--color-ink);
+
+  /* Motion tokens */
+  --ease-out-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-premium: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms;
+  --dur-base: 320ms;
+  --dur-slow: 620ms;
+}
+
+@theme inline {
+  --color-red: var(--color-red);
+  --color-red-dark: var(--color-red-dark);
+  --color-red-light: var(--color-red-light);
+  --color-ink: var(--color-ink);
+  --color-anthracite: var(--color-anthracite);
+  --color-anthracite-2: var(--color-anthracite-2);
+  --color-anthracite-3: var(--color-anthracite-3);
+  --color-paper: var(--color-paper);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-display: var(--font-barlow-condensed);
+  --font-body: var(--font-barlow);
+
+  --breakpoint-xs: 26rem;
+}
+
+* {
+  border-color: var(--color-neutral-200);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+/* Focus visibility kept consistent across custom interactive elements */
+:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.container-page {
+  width: 100%;
+  max-width: 84rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-inline: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-inline: 3rem;
+  }
+}
+
+.section-y {
+  padding-block: 5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 8rem;
+  }
+}
