@@ -206,6 +206,7 @@ export const storyNarrative = {
       type: "paragraph",
       text: "Ogni squadra scende in campo rappresentando con orgoglio la propria azienda. Ogni partita diventa un'occasione per competere, conoscersi e condividere qualcosa che va oltre il risultato.",
       highlight: "orgoglio",
+      photo: "/images/azione-tiro-mcdonalds.jpg",
     },
     {
       type: "paragraph",
@@ -217,6 +218,7 @@ export const storyNarrative = {
       type: "paragraph",
       text: "L'obiettivo è costruire, edizione dopo edizione, un appuntamento capace di crescere insieme al territorio e diventare un punto di riferimento per le aziende che credono nel valore delle persone.",
       highlight: "territorio",
+      photo: "/images/azione-dribbling-uno-mcdonalds.jpg",
     },
   ] as StoryBeat[],
   closing: {

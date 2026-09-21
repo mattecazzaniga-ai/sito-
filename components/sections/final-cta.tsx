@@ -1,15 +1,20 @@
-import { Trophy } from "lucide-react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { PlaceholderVisual } from "@/components/ui/placeholder-visual";
 import { fadeUp } from "@/lib/motion";
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
+    <section className="relative isolate overflow-hidden bg-ink py-24 sm:py-32">
       <div className="absolute inset-0 -z-10">
-        <PlaceholderVisual tone="anthracite" icon={Trophy} label="Foto premiazione" className="h-full w-full" />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/80 to-ink" />
+        <Image
+          src="/images/azione-portiere-ondulor.jpg"
+          alt="Portiere in azione durante una partita di Aziende in Campo"
+          fill
+          sizes="100vw"
+          className="object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/85 to-ink" />
       </div>
 
       <div className="container-page flex flex-col items-center gap-8 text-center">

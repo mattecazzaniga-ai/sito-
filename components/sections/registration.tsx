@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle2, Loader2, TriangleAlert } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -92,12 +93,23 @@ export function Registration() {
   return (
     <section id="iscrizione" className="section-y bg-neutral-100">
       <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           <SectionHeading
             eyebrow="Iscrizione"
             title="Porta la tua azienda in campo."
             description="Compila il form: ti ricontatteremo per confermare i dettagli e completare l'iscrizione della tua azienda."
           />
+          <Reveal delay={0.1} className="hidden lg:block">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
+              <Image
+                src="/images/azione-corsa-mcdonalds.jpg"
+                alt="Giocatore in corsa durante una partita di Aziende in Campo"
+                fill
+                sizes="35vw"
+                className="object-cover object-top"
+              />
+            </div>
+          </Reveal>
         </div>
 
         <Reveal>

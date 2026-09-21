@@ -1,7 +1,6 @@
-import { Volleyball } from "lucide-react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { PlaceholderVisual } from "@/components/ui/placeholder-visual";
 import { eventIntro } from "@/lib/content";
 import { scaleIn } from "@/lib/motion";
 
@@ -10,12 +9,15 @@ export function EventIntro() {
     <section id="evento" className="section-y bg-white">
       <div className="container-page grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
         <Reveal variants={scaleIn} className="order-2 lg:order-1">
-          <PlaceholderVisual
-            icon={Volleyball}
-            label="Foto squadra calcio a 5"
-            tone="paper"
-            className="aspect-[4/5] w-full rounded-3xl sm:aspect-[3/4]"
-          />
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[3/4]">
+            <Image
+              src="/images/azione-contrasto-palla.jpg"
+              alt="Due giocatori si contendono il pallone durante una partita di Aziende in Campo"
+              fill
+              sizes="(min-width: 1024px) 45vw, 90vw"
+              className="object-cover"
+            />
+          </div>
         </Reveal>
 
         <div className="order-1 flex flex-col gap-8 lg:order-2">
