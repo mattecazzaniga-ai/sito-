@@ -169,6 +169,63 @@ export const formatDetails = {
 };
 
 /**
+ * Editorial origin story for /storia. Verbatim copy provided by the
+ * organizer — do not paraphrase, shorten, or invent additional personal
+ * details, names or dates beyond what's written here.
+ */
+export type StoryBeat =
+  | { type: "lead"; text: string }
+  | { type: "paragraph"; text: string; highlight?: string; photo?: string }
+  | { type: "pullquote"; lines: string[] };
+
+export const storyNarrative = {
+  eyebrow: "La storia",
+  title: "Tutto nasce da un'idea semplice.",
+  beats: [
+    {
+      type: "lead",
+      text: "Ogni giorno le aziende collaborano, si incontrano e costruiscono il futuro del territorio. Ma raramente hanno un'occasione autentica per conoscersi fuori dall'ambiente di lavoro.",
+    },
+    {
+      type: "paragraph",
+      text: "Da questa osservazione nasce Aziende in Campo: dall'idea di un ragazzo con la passione per lo sport e per il proprio territorio, che ha immaginato un evento capace di portare le aziende fuori dall'ufficio e dentro una giornata diversa, fatta di calcio a 5, relazioni e divertimento.",
+      highlight: "passione",
+      photo: "/images/hero-calcio-a-5.jpg",
+    },
+    {
+      type: "pullquote",
+      lines: ["Non un torneo qualsiasi.", "Un'esperienza."],
+    },
+    {
+      type: "paragraph",
+      text: "Il calcio a 5 diventa così il punto d'incontro: un linguaggio semplice e universale capace di unire persone, creare complicità e accorciare le distanze.",
+      highlight: "complicità",
+      photo: "/images/albo-doro-2025-fette-di-sole.jpg",
+    },
+    {
+      type: "paragraph",
+      text: "Ogni squadra scende in campo rappresentando con orgoglio la propria azienda. Ogni partita diventa un'occasione per competere, conoscersi e condividere qualcosa che va oltre il risultato.",
+      highlight: "orgoglio",
+    },
+    {
+      type: "paragraph",
+      text: "E quando il fischio finale arriva, non rimane soltanto una classifica. Rimangono fotografie, video, emozioni, risate e ricordi di una giornata vissuta insieme.",
+      highlight: "ricordi",
+      photo: "/images/albo-doro-2026-diesa-mcdonalds.jpg",
+    },
+    {
+      type: "paragraph",
+      text: "L'obiettivo è costruire, edizione dopo edizione, un appuntamento capace di crescere insieme al territorio e diventare un punto di riferimento per le aziende che credono nel valore delle persone.",
+      highlight: "territorio",
+    },
+  ] as StoryBeat[],
+  closing: {
+    lead: "Perché una squadra non si costruisce soltanto sul campo.",
+    final: "Si costruisce insieme.",
+  },
+};
+
+/**
  * Project history. No team-count numbers belong here — see REGOLA SUI DATI.
  */
 export const history = [

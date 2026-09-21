@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { history } from "@/lib/content";
 
 export function History() {
@@ -13,11 +14,17 @@ export function History() {
   });
 
   return (
-    <section className="bg-neutral-100 pb-20 pt-12 sm:pb-32 sm:pt-16">
+    <section className="section-y bg-neutral-100">
       <div className="container-page">
+        <SectionHeading
+          eyebrow="Le edizioni"
+          title="Anno per anno."
+          description="Il percorso di Aziende in Campo, edizione dopo edizione."
+        />
+
         <ol
           ref={containerRef}
-          className="relative grid gap-10 sm:grid-cols-3 sm:gap-6"
+          className="relative mt-16 grid gap-10 sm:grid-cols-3 sm:gap-6"
         >
           <div
             className="absolute left-4 top-4 hidden h-[2px] w-[calc(100%-2rem)] bg-neutral-300 sm:block"
