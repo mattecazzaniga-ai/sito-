@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import { Calendar, Volleyball, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PlaceholderVisual } from "@/components/ui/placeholder-visual";
 import { eventInfo } from "@/lib/content";
 import { DUR, EASE_OUT, staggerContainer } from "@/lib/motion";
 
@@ -19,12 +19,28 @@ const item = {
 };
 
 export function Hero() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section id="home" className="relative flex min-h-dvh items-end overflow-hidden bg-ink pt-32 pb-16 sm:pt-40">
+    <section id="home" className="relative isolate flex min-h-dvh items-end overflow-hidden bg-ink pt-32 pb-16 sm:pt-40">
       <div className="absolute inset-0 -z-10">
-        <PlaceholderVisual tone="anthracite" icon={Volleyball} label="Foto azione calcio a 5" className="h-full w-full" />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-transparent to-ink/40" />
+        <motion.div
+          className="h-full w-full"
+          initial={{ scale: prefersReducedMotion ? 1 : 1.12 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 5, ease: EASE_OUT }}
+        >
+          <Image
+            src="/images/hero-calcio-a-5.jpg"
+            alt="Giocatori di calcio a 5 di Aziende in Campo si stringono la mano a fine partita"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[32%_22%]"
+          />
+        </motion.div>
+        <div className="absolute inset-0 bg-gradient-to-t from-ink from-0% via-ink/55 via-40% to-transparent to-80%" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/70 from-0% via-transparent via-60% to-transparent" />
       </div>
 
       <motion.div
