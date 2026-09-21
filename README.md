@@ -1,6 +1,6 @@
 # Aziende in Campo
 
-Sito ufficiale dell'evento sportivo aziendale **Aziende in Campo**. Next.js 16 (App Router) + TypeScript + Tailwind CSS v4 + Framer Motion.
+Sito ufficiale di **Aziende in Campo**, il torneo di calcio a 5 tra aziende e realtà del territorio di Oristano. Next.js 16 (App Router) + TypeScript + Tailwind CSS v4 + Framer Motion.
 
 ## Sviluppo
 
@@ -20,18 +20,22 @@ npm run lint    # ESLint
 
 Tutti i testi/dati editabili sono centralizzati in **`lib/content.ts`**. Cerca i commenti `PLACEHOLDER` per trovare rapidamente cosa manca:
 
-- Data, location, sport e numero massimo partecipanti (`eventInfo`)
-- Dettagli del format (sport, durata partite, gironi, premi) (`formatDetails`)
-- Aziende partecipanti e loro settore/logo (`companies`)
-- Classifica di esempio (`standings`)
+- Data e location della prossima edizione (`eventInfo`)
+- Dettagli non ancora ufficiali del format (regolamento, durata partite) (`formatDetails`)
 - Sponsor e relativo livello (`sponsors`)
 - Contatti (email, telefono, social) (`contact`)
 - Risposte FAQ con prezzo/location non ancora confermati
 - Dominio definitivo (`siteConfig.url`, usato anche per la sitemap e i meta Open Graph)
 
-Le foto/video sono al momento placeholder generati via CSS (componente `PlaceholderVisual`, riconoscibile dalla piccola etichetta nell'angolo). Sostituiscili con asset reali in `public/` e usa `next/image` o `<video>` al loro posto.
+### Dati storici: accuratezza prima di tutto
 
-I loghi aziende/sponsor sono iniziali generate (`CompanyMark`) — sostituiscili con i loghi reali quando disponibili.
+`participants` (chi è già sceso in campo), `hallOfFame` (albo d'oro) e `individualAwards` (premi individuali) sono **fatti reali**, non segnaposto. Ogni voce riporta in commento la fonte usata per verificarla. Prima di modificarli:
+
+- non aggiungere un nome, un risultato o un premio senza una fonte attendibile (articolo di stampa locale o conferma diretta dell'organizzazione);
+- non mostrare classifiche complete, secondi/terzi posti o numero di squadre per edizione — per scelta editoriale il sito mostra solo il vincitore di ogni edizione verificata;
+- se un dato non è verificato, lascia `verified: false` (Albo d'oro) o ometti la voce piuttosto che inventarla.
+
+Le foto/video sono al momento placeholder generati via CSS (componente `PlaceholderVisual`, riconoscibile dalla piccola etichetta nell'angolo). Sostituiscili con asset reali in `public/` e usa `next/image` o `<video>` al loro posto — idealmente foto/azione di calcio a 5, non calcio a 11 generico.
 
 ## Form e backend
 
@@ -40,7 +44,7 @@ I loghi aziende/sponsor sono iniziali generate (`CompanyMark`) — sostituiscili
 
 ## Area organizzatore (`/app/admin`)
 
-Scaffold dell'architettura per la futura dashboard privata (Overview, Aziende, Partecipanti, Squadre, Partite, Risultati, Classifica, Sponsor, Iscrizioni, Comunicazioni). **Non è ancora protetta da autenticazione** ed è esclusa da robots.txt: prima di andare in produzione va aggiunta autenticazione reale (middleware + provider auth) e collegato un database.
+Scaffold dell'architettura per la futura dashboard privata (Overview, Aziende, Partecipanti, Squadre, Partite, Risultati, Albo d'oro, Sponsor, Iscrizioni, Comunicazioni). **Non è ancora protetta da autenticazione** ed è esclusa da robots.txt: prima di andare in produzione va aggiunta autenticazione reale (middleware + provider auth) e collegato un database.
 
 ## Deploy
 

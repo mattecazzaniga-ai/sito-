@@ -33,7 +33,7 @@ export default function OpengraphImage() {
           }}
         />
         <div style={{ display: "flex", fontSize: 26, color: "#e0132b", fontWeight: 700, letterSpacing: 4 }}>
-          EVENTO SPORTIVO AZIENDALE
+          IL TORNEO DI CALCIO A 5 TRA AZIENDE
         </div>
         <div
           style={{

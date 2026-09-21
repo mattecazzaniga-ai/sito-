@@ -6,7 +6,6 @@ export type IscrizionePayload = {
   email: string;
   telefono: string;
   partecipanti: string;
-  sport: string;
   note?: string;
 };
 
@@ -33,7 +32,6 @@ export async function POST(request: Request) {
     "email",
     "telefono",
     "partecipanti",
-    "sport",
   ];
 
   const missing = requiredFields.filter((field) => !payload[field]?.toString().trim());

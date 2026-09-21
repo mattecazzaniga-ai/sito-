@@ -1,7 +1,7 @@
 import { Building2, ClipboardList, Handshake, Trophy } from "lucide-react";
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
 import { AdminStatCard } from "@/components/admin/admin-stat-card";
-import { companies, sponsors, standings } from "@/lib/content";
+import { hallOfFame, participants, sponsors } from "@/lib/content";
 
 export default function AdminOverviewPage() {
   return (
@@ -12,8 +12,8 @@ export default function AdminOverviewPage() {
       />
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <AdminStatCard icon={Building2} label="Aziende" value={companies.length} />
-        <AdminStatCard icon={Trophy} label="Squadre in classifica" value={standings.length} />
+        <AdminStatCard icon={Building2} label="Aziende partecipanti" value={participants.length} />
+        <AdminStatCard icon={Trophy} label="Edizioni in albo d'oro" value={hallOfFame.length} />
         <AdminStatCard icon={Handshake} label="Sponsor" value={sponsors.length} />
         <AdminStatCard icon={ClipboardList} label="Iscrizioni ricevute" value="—" />
       </div>
@@ -27,6 +27,7 @@ export default function AdminOverviewPage() {
           <li>Collegare un database (aziende, squadre, partite, risultati, iscrizioni, sponsor).</li>
           <li>Sostituire i dati statici in <code className="rounded bg-neutral-100 px-1">lib/content.ts</code> con query al database.</li>
           <li>Collegare gli endpoint <code className="rounded bg-neutral-100 px-1">/api/iscrizioni</code> e <code className="rounded bg-neutral-100 px-1">/api/contatti</code> alla persistenza reale.</li>
+          <li>Verificare ogni fatto storico (Albo d&rsquo;oro, premi individuali, partecipanti) prima di pubblicarlo: sono dati reali, non segnaposto.</li>
         </ul>
       </div>
     </div>

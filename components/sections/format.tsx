@@ -1,17 +1,20 @@
-import { Award, Clock, Sparkles, Swords, Trophy, Users, UsersRound, Layers } from "lucide-react";
+import { Calendar, Volleyball, Trophy, UsersRound, Whistle, Timer, Swords, Award } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { formatDetails } from "@/lib/content";
+import { formatDetails, formatIdentity } from "@/lib/content";
+
+const identityIcons = {
+  ball: Volleyball,
+  trophy: Trophy,
+  users: UsersRound,
+  calendar: Calendar,
+} as const;
 
 const rows = [
-  { icon: Trophy, label: "Sport", value: formatDetails.sport },
-  { icon: Users, label: "Giocatori per squadra", value: formatDetails.playersPerTeam },
-  { icon: Clock, label: "Durata partite", value: formatDetails.matchDuration },
-  { icon: UsersRound, label: "Squadre", value: formatDetails.teams },
-  { icon: Layers, label: "Fase a gironi", value: formatDetails.groupStage },
-  { icon: Swords, label: "Fase finale", value: formatDetails.finalStage },
-  { icon: Award, label: "Premi", value: formatDetails.prizes },
-  { icon: Sparkles, label: "Attività extra", value: formatDetails.extras },
+  { icon: Whistle, label: "Struttura del torneo", value: formatDetails.structure },
+  { icon: Timer, label: "Durata partite", value: formatDetails.matchDuration },
+  { icon: Swords, label: "Regolamento", value: formatDetails.rules },
+  { icon: Award, label: "Premiazione", value: formatDetails.awards },
 ];
 
 export function Format() {
@@ -21,11 +24,28 @@ export function Format() {
         <SectionHeading
           eyebrow="Il format"
           title="Le regole del gioco"
-          description="La struttura della giornata, in breve. I dettagli definitivi verranno confermati a ridosso dell'evento."
+          description="La struttura del torneo di calcio a 5. I dettagli non ancora ufficiali verranno confermati a ridosso della prossima edizione."
           tone="light"
         />
 
-        <dl className="mt-14 grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal>
+          <div className="mt-12 flex flex-wrap gap-3">
+            {formatIdentity.map(({ icon, label }) => {
+              const Icon = identityIcons[icon];
+              return (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.15em] text-white/85"
+                >
+                  <Icon className="h-4 w-4 text-red" strokeWidth={1.75} aria-hidden="true" />
+                  {label}
+                </span>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        <dl className="mt-8 grid gap-px overflow-hidden rounded-3xl bg-white/10 sm:grid-cols-2">
           {rows.map((row, index) => (
             <Reveal key={row.label} delay={index * 0.04} className="bg-ink p-7">
               <row.icon className="h-5 w-5 text-red" strokeWidth={1.75} aria-hidden="true" />

@@ -6,7 +6,7 @@ import { CheckCircle2, Loader2, TriangleAlert } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { SelectField, TextField, TextareaField } from "@/components/ui/form-field";
+import { TextField, TextareaField } from "@/components/ui/form-field";
 import { EASE_OUT } from "@/lib/motion";
 
 type FormState = {
@@ -15,7 +15,6 @@ type FormState = {
   email: string;
   telefono: string;
   partecipanti: string;
-  sport: string;
   note: string;
 };
 
@@ -25,7 +24,6 @@ const initialState: FormState = {
   email: "",
   telefono: "",
   partecipanti: "",
-  sport: "",
   note: "",
 };
 
@@ -53,7 +51,6 @@ export function Registration() {
     }
     if (!current.telefono.trim()) next.telefono = "Inserisci un numero di telefono.";
     if (!current.partecipanti.trim()) next.partecipanti = "Indica il numero di partecipanti.";
-    if (!current.sport.trim()) next.sport = "Seleziona uno sport o un interesse.";
     return next;
   }
 
@@ -184,35 +181,18 @@ export function Registration() {
                 />
               </div>
 
-              <div className="grid gap-5 sm:grid-cols-2">
-                <TextField
-                  label="Numero partecipanti"
-                  type="number"
-                  min={1}
-                  required
-                  inputMode="numeric"
-                  value={form.partecipanti}
-                  onChange={(e) => update("partecipanti", e.target.value)}
-                  onBlur={() => handleBlur("partecipanti")}
-                  error={errors.partecipanti}
-                />
-                <SelectField
-                  label="Sport / interesse"
-                  required
-                  value={form.sport}
-                  onChange={(e) => update("sport", e.target.value)}
-                  onBlur={() => handleBlur("sport")}
-                  error={errors.sport}
-                >
-                  <option value="" disabled>
-                    Seleziona un&rsquo;opzione
-                  </option>
-                  <option value="calcio-a-7">Calcio a 7</option>
-                  <option value="padel">Padel</option>
-                  <option value="basket">Basket 3x3</option>
-                  <option value="altro">Altro / non sono sicuro</option>
-                </SelectField>
-              </div>
+              <TextField
+                label="Numero partecipanti"
+                type="number"
+                min={1}
+                required
+                inputMode="numeric"
+                helperText="Quante persone comporranno la tua squadra di calcio a 5."
+                value={form.partecipanti}
+                onChange={(e) => update("partecipanti", e.target.value)}
+                onBlur={() => handleBlur("partecipanti")}
+                error={errors.partecipanti}
+              />
 
               <TextareaField
                 label="Note"

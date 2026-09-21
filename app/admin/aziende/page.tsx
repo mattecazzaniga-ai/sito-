@@ -1,12 +1,12 @@
 import { AdminPageHeader } from "@/components/admin/admin-page-header";
-import { companies } from "@/lib/content";
+import { participants } from "@/lib/content";
 
 export default function AdminAziendePage() {
   return (
     <div className="flex flex-col gap-8">
       <AdminPageHeader
         title="Aziende"
-        description="Elenco in sola lettura, letto da lib/content.ts. Collegare al database per rendere questa tabella modificabile."
+        description="Realtà che hanno già partecipato ad Aziende in Campo, in sola lettura da lib/content.ts. Verificare la fonte prima di aggiungere o rimuovere un nome."
       />
 
       <div className="overflow-hidden rounded-2xl border border-neutral-200 bg-white">
@@ -14,18 +14,14 @@ export default function AdminAziendePage() {
           <thead>
             <tr className="border-b border-neutral-200 bg-neutral-50">
               <th className="px-5 py-3 font-display text-xs font-semibold uppercase tracking-wide text-neutral-500">
-                Azienda
-              </th>
-              <th className="px-5 py-3 font-display text-xs font-semibold uppercase tracking-wide text-neutral-500">
-                Settore
+                Azienda / realtà
               </th>
             </tr>
           </thead>
           <tbody>
-            {companies.map((company) => (
-              <tr key={company.name} className="border-b border-neutral-100 last:border-0">
-                <td className="px-5 py-3 font-medium text-ink">{company.name}</td>
-                <td className="px-5 py-3 text-neutral-600">{company.sector}</td>
+            {participants.map((name) => (
+              <tr key={name} className="border-b border-neutral-100 last:border-0">
+                <td className="px-5 py-3 font-medium text-ink">{name}</td>
               </tr>
             ))}
           </tbody>

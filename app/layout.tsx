@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
-import { siteConfig } from "@/lib/content";
+import { eventInfo, siteConfig } from "@/lib/content";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -26,16 +26,17 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Il torneo sportivo dedicato alle aziende`,
+    default: `${siteConfig.name} — Il torneo di calcio a 5 tra aziende`,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
     "Aziende in Campo",
-    "torneo aziende",
-    "evento sportivo aziende",
-    "torneo aziendale",
-    "eventi sportivi aziendali",
+    "torneo calcio a 5 aziende",
+    "calcio a 5 Oristano",
+    "torneo aziendale Oristano",
+    "calcetto tra aziende",
+    "eventi sportivi aziendali Oristano",
   ],
   authors: [{ name: siteConfig.organizer }],
   creator: siteConfig.organizer,
@@ -47,13 +48,13 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Il torneo sportivo dedicato alle aziende`,
+    title: `${siteConfig.name} — Il torneo di calcio a 5 tra aziende`,
     description: siteConfig.description,
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Il torneo sportivo dedicato alle aziende`,
+    title: `${siteConfig.name} — Il torneo di calcio a 5 tra aziende`,
     description: siteConfig.description,
     images: ["/opengraph-image"],
   },
@@ -75,6 +76,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     organizer: {
       "@type": "Organization",
       name: siteConfig.organizer,
+    },
+    sport: eventInfo.sport,
+    location: {
+      "@type": "Place",
+      name: eventInfo.location,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Oristano",
+        addressCountry: "IT",
+      },
     },
     // PLACEHOLDER — aggiornare con data e location definitive quando confermate
     eventStatus: "https://schema.org/EventScheduled",

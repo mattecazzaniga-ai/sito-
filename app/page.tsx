@@ -4,9 +4,10 @@ import { Hero } from "@/components/sections/hero";
 import { EventIntro } from "@/components/sections/event-intro";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Format } from "@/components/sections/format";
+import { History } from "@/components/sections/history";
 import { Timeline } from "@/components/sections/timeline";
-import { Companies } from "@/components/sections/companies";
-import { Standings } from "@/components/sections/standings";
+import { Participants } from "@/components/sections/participants";
+import { HallOfFame } from "@/components/sections/hall-of-fame";
 import { Sponsors } from "@/components/sections/sponsors";
 import { Registration } from "@/components/sections/registration";
 import { Faq } from "@/components/sections/faq";
@@ -27,9 +28,10 @@ export default function Home() {
         <EventIntro />
         <HowItWorks />
         <Format />
+        <History />
         <Timeline />
-        <Companies />
-        <Standings />
+        <Participants />
+        <HallOfFame />
         <Sponsors />
         <Registration />
         <Faq />

@@ -1,17 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Trophy, Users } from "lucide-react";
+import { Calendar, Volleyball, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PlaceholderVisual } from "@/components/ui/placeholder-visual";
 import { eventInfo } from "@/lib/content";
 import { DUR, EASE_OUT, staggerContainer } from "@/lib/motion";
 
 const metaItems = [
+  { icon: Volleyball, label: eventInfo.sport },
   { icon: Calendar, label: eventInfo.dateLabel },
   { icon: MapPin, label: eventInfo.location },
-  { icon: Trophy, label: eventInfo.sport },
-  { icon: Users, label: eventInfo.maxParticipants },
 ];
 
 const item = {
@@ -23,7 +22,7 @@ export function Hero() {
   return (
     <section id="home" className="relative flex min-h-dvh items-end overflow-hidden bg-ink pt-32 pb-16 sm:pt-40">
       <div className="absolute inset-0 -z-10">
-        <PlaceholderVisual tone="anthracite" label="Video / foto evento" className="h-full w-full" />
+        <PlaceholderVisual tone="anthracite" icon={Volleyball} label="Foto azione calcio a 5" className="h-full w-full" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/20" />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-transparent to-ink/40" />
       </div>
@@ -37,7 +36,7 @@ export function Hero() {
         <motion.div variants={item} className="flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-red" aria-hidden="true" />
-            Prima edizione
+            Il torneo di calcio a 5 tra aziende
           </span>
         </motion.div>
 
@@ -57,8 +56,9 @@ export function Hero() {
             variants={item}
             className="max-w-xl text-balance text-lg font-medium text-white/80 sm:text-xl"
           >
-            Un evento sportivo che porta aziende, persone e competizione fuori
-            dall&rsquo;ufficio.
+            Il calcio a 5 delle aziende: un torneo che porta colleghi e
+            aziende del territorio in campo, trasformando una giornata di
+            sport in un&rsquo;esperienza da vivere insieme.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap gap-3">
@@ -66,14 +66,14 @@ export function Hero() {
               Iscrivi la tua azienda
             </Button>
             <Button href="/#evento" size="lg" variant="outline-light">
-              Scopri l&rsquo;evento
+              Scopri il torneo
             </Button>
           </motion.div>
         </div>
 
         <motion.dl
           variants={item}
-          className="grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/10 pt-6 sm:grid-cols-4"
+          className="grid grid-cols-2 gap-x-6 gap-y-5 border-t border-white/10 pt-6 sm:grid-cols-3"
         >
           {metaItems.map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-2.5">

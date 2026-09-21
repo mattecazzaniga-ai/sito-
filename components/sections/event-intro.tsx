@@ -1,9 +1,8 @@
-import { Trophy } from "lucide-react";
+import { Volleyball } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { PlaceholderVisual } from "@/components/ui/placeholder-visual";
-import { eventIntro, heroStats } from "@/lib/content";
+import { eventIntro } from "@/lib/content";
 import { scaleIn } from "@/lib/motion";
 
 export function EventIntro() {
@@ -12,8 +11,8 @@ export function EventIntro() {
       <div className="container-page grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-16">
         <Reveal variants={scaleIn} className="order-2 lg:order-1">
           <PlaceholderVisual
-            icon={Trophy}
-            label="Foto squadra in campo"
+            icon={Volleyball}
+            label="Foto squadra calcio a 5"
             tone="paper"
             className="aspect-[4/5] w-full rounded-3xl sm:aspect-[3/4]"
           />
@@ -49,22 +48,6 @@ export function EventIntro() {
                 </div>
               ))}
             </div>
-          </Reveal>
-
-          <Reveal delay={0.2}>
-            <dl className="grid grid-cols-2 gap-6 border-t border-neutral-200 pt-8 sm:grid-cols-4">
-              {heroStats.map((stat) => (
-                <div key={stat.label}>
-                  <dt className="sr-only">{stat.label}</dt>
-                  <dd className="font-display text-4xl font-bold text-ink sm:text-5xl">
-                    <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                  </dd>
-                  <p className="mt-1 font-display text-xs font-medium uppercase tracking-[0.15em] text-neutral-500">
-                    {stat.label}
-                  </p>
-                </div>
-              ))}
-            </dl>
           </Reveal>
         </div>
       </div>

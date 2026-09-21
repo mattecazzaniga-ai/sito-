@@ -2,17 +2,19 @@
  * Single source of truth for every editable string on the site.
  *
  * Everything marked "PLACEHOLDER" is not a real, confirmed detail — swap it
- * for the real value as soon as it is known. Nothing here is wired to a
- * backend yet; the shapes below are what the future admin dashboard
- * (see /app/admin) is expected to write to.
+ * for the real value as soon as it is known. Facts about past editions
+ * (Albo d'Oro, premi individuali, chi ha partecipato) must stay accurate:
+ * do not add a name, a result or a number that isn't verified. Nothing
+ * here is wired to a backend yet; the shapes below are what the future
+ * admin dashboard (see /app/admin) is expected to write to.
  */
 
 export const siteConfig = {
   name: "Aziende in Campo",
   shortName: "AiC",
-  tagline: "Dove le aziende scendono in campo.",
+  tagline: "Il calcio a 5 delle aziende.",
   description:
-    "Aziende in Campo è l'evento sportivo che porta persone, squadre e aziende fuori dall'ufficio per una giornata di sport, competizione e networking informale.",
+    "Aziende in Campo è il torneo di calcio a 5 tra aziende e realtà del territorio di Oristano: una giornata di sport, squadra e competizione fuori dal normale ambiente di lavoro.",
   url: "https://www.aziendeincampo.it", // PLACEHOLDER — dominio definitivo
   organizer: "Orisound",
   locale: "it_IT",
@@ -35,32 +37,22 @@ export const navLinks = [
 ];
 
 export const eventInfo = {
-  dateLabel: "Giugno 2026", // PLACEHOLDER — data da confermare
-  dateNote: "Data esatta in via di definizione",
-  location: "Centro Sportivo, Milano", // PLACEHOLDER
-  locationNote: "Location da confermare",
-  sport: "Calcio a 7", // PLACEHOLDER — sport principale
-  maxParticipants: "120+", // PLACEHOLDER
+  sport: "Calcio a 5",
+  dateLabel: "Prossima edizione", // PLACEHOLDER — data della 3ª edizione non ancora annunciata
+  location: "Oristano", // sede storica: campo MC Sport — da confermare per la prossima edizione
 };
-
-export const heroStats = [
-  { value: 16, suffix: "+", label: "Aziende" },
-  { value: 120, suffix: "+", label: "Partecipanti" },
-  { value: 8, suffix: "", label: "Squadre" },
-  { value: 1, suffix: "", label: "Giornata" },
-];
 
 export const eventIntro = {
   eyebrow: "Il concept",
-  title: "Non è solo una partita.",
+  title: "Il calcio a 5, vissuto insieme.",
   paragraphs: [
-    "Aziende in Campo nasce per portare le persone fuori dall'ufficio e dentro una giornata fatta di sport, squadra, competizione e divertimento.",
-    "Un format pensato per aziende che vogliono costruire relazioni vere, fuori dai contesti formali, con la stessa energia di un grande evento sportivo.",
+    "Aziende in Campo è un torneo di calcio a 5 dedicato alle aziende e alle realtà del territorio di Oristano.",
+    "L'obiettivo è creare una giornata in cui colleghi e aziende possano vivere la competizione sul campo e condividere un'esperienza al di fuori del normale ambiente lavorativo.",
   ],
   highlights: [
-    { label: "Sport", value: "Vero" },
-    { label: "Networking", value: "Informale" },
-    { label: "Format", value: "Premium" },
+    { label: "Sport", value: "Calcio a 5" },
+    { label: "Format", value: "Torneo" },
+    { label: "Territorio", value: "Oristano" },
   ],
 };
 
@@ -69,38 +61,55 @@ export const howItWorksSteps = [
     number: "01",
     title: "Iscrivi la tua azienda",
     description:
-      "Compila il form di iscrizione: bastano pochi minuti per prenotare il posto della tua azienda.",
+      "Compila il form di iscrizione: bastano pochi minuti per prenotare il posto della tua azienda al torneo.",
   },
   {
     number: "02",
     title: "Forma la tua squadra",
     description:
-      "Coinvolgi i tuoi colleghi e costruisci la squadra che rappresenterà l'azienda in campo.",
+      "Coinvolgi i tuoi colleghi e costruisci la squadra di calcio a 5 che rappresenterà l'azienda.",
   },
   {
     number: "03",
     title: "Scendi in campo",
     description:
-      "Il giorno dell'evento vivi gironi e fasi finali insieme alle altre aziende partecipanti.",
+      "Il giorno del torneo affronti le altre squadre aziendali del territorio, tra fase a gironi e fase finale.",
   },
   {
     number: "04",
     title: "Vivi l'evento",
     description:
-      "Sport, premiazione e networking informale: la giornata continua ben oltre il fischio finale.",
+      "Partite, premiazione e networking informale: la giornata continua ben oltre il fischio finale.",
   },
 ];
 
+/**
+ * Identity chips shown at the top of the Format section. These describe the
+ * event, not numbers to display elsewhere (no team counts on the site).
+ */
+export const formatIdentity = [
+  { icon: "ball", label: "Calcio a 5" },
+  { icon: "trophy", label: "Torneo" },
+  { icon: "users", label: "Squadre aziendali" },
+  { icon: "calendar", label: "Giornata di evento" },
+] as const;
+
+// Solo fatti confermati o segnaposto dichiarati come tali: nessuna regola inventata.
 export const formatDetails = {
-  sport: "Calcio a 7", // PLACEHOLDER
-  playersPerTeam: "7 + panchina", // PLACEHOLDER
-  matchDuration: "2 tempi da 12 minuti", // PLACEHOLDER
-  teams: "8 squadre aziendali", // PLACEHOLDER
-  groupStage: "Fase a gironi, 2 gruppi da 4 squadre", // PLACEHOLDER
-  finalStage: "Semifinali + finale 1°-2° e 3°-4° posto", // PLACEHOLDER
-  prizes: "Coppa, medaglie e premi per il miglior giocatore", // PLACEHOLDER
-  extras: "Area networking, ristoro e musica per tutta la giornata", // PLACEHOLDER
+  structure: "Fase a gironi seguita da semifinali e finale",
+  rules: "Regolamento ufficiale in fase di pubblicazione", // PLACEHOLDER
+  matchDuration: "Durata partite da confermare", // PLACEHOLDER
+  awards: "Premiazione a fine giornata per la squadra vincitrice e i riconoscimenti individuali",
 };
+
+/**
+ * Project history. No team-count numbers belong here — see REGOLA SUI DATI.
+ */
+export const history = [
+  { year: "2025", title: "Nasce Aziende in Campo", description: "Prima edizione del torneo di calcio a 5 tra aziende del territorio di Oristano." },
+  { year: "2026", title: "Seconda edizione", description: "Il torneo torna con la seconda edizione." },
+  { year: "2027", title: "Prossima edizione", description: "Informazioni in arrivo." }, // PLACEHOLDER
+];
 
 export const timeline = [
   { time: "09:00", title: "Check-in", description: "Accredito squadre e welcome kit." },
@@ -109,43 +118,68 @@ export const timeline = [
   { time: "14:30", title: "Fase finale", description: "Semifinali tra le migliori squadre." },
   { time: "17:30", title: "Finali", description: "Finale 3°-4° e finalissima." },
   { time: "18:30", title: "Premiazione", description: "Premi, foto di gruppo e chiusura." },
+]; // PLACEHOLDER — orario indicativo, da confermare per la prossima edizione
+
+/**
+ * Realtà che hanno effettivamente preso parte alle edizioni già disputate
+ * di Aziende in Campo. Nessun anno, posizione o numero di squadre: solo il
+ * nome, come richiesto per la sezione "Chi è già sceso in campo".
+ *
+ * Fonti: giornaledioristano.it e ornews.it (edizione 2026); ornews.it
+ * (edizione 2025). Verificare prima di ogni modifica — non aggiungere un
+ * nome che non abbia una fonte giornalistica o una conferma diretta
+ * dell'organizzazione.
+ */
+export const participants: string[] = [
+  "Fette di Sole (Gruppo Cellino)",
+  "Abbi Group",
+  "Vestis",
+  "Bump Bar (McDonald's)",
+  "Ondulor",
+  "Catte Cup",
+  "F.lli Cellino",
+  "Diesa S.r.l. (McDonald's)",
+  "Consorzio UNO – Università di Oristano",
 ];
 
-export type Company = {
+export type HallOfFameEntry = {
+  year: string;
+  winner: string;
+  note: string;
+  verified: boolean;
+};
+
+/**
+ * Solo i vincitori con primo posto verificato da fonte attendibile.
+ * Se un anno non è verificato, "winner" resta vuoto e "verified" è false:
+ * il componente mostra "Risultato da inserire" invece di un nome.
+ */
+export const hallOfFame: HallOfFameEntry[] = [
+  {
+    year: "2025",
+    winner: "Fette di Sole (Gruppo Cellino)",
+    note: "La prima edizione del torneo di calcio a 5 è stata vinta da Fette di Sole.",
+    verified: true, // fonte: ornews.it — verificare prima della pubblicazione
+  },
+  {
+    year: "2026",
+    winner: "Diesa S.r.l. / McDonald's",
+    note: "La seconda edizione del torneo di calcio a 5 è stata vinta da Diesa Srl / McDonald's.",
+    verified: true, // fonte: oristanonoi.it
+  },
+];
+
+export type IndividualAward = {
+  year: string;
+  award: string;
   name: string;
-  sector: string;
 };
 
-// PLACEHOLDER — sostituire con le aziende realmente iscritte (nome, settore, logo in /public/logos)
-export const companies: Company[] = [
-  { name: "Azienda Uno", sector: "Tecnologia" },
-  { name: "Azienda Due", sector: "Finanza" },
-  { name: "Azienda Tre", sector: "Manifattura" },
-  { name: "Azienda Quattro", sector: "Retail" },
-  { name: "Azienda Cinque", sector: "Consulenza" },
-  { name: "Azienda Sei", sector: "Energia" },
-  { name: "Azienda Sette", sector: "Logistica" },
-  { name: "Azienda Otto", sector: "Real Estate" },
-  { name: "Azienda Nove", sector: "Healthcare" },
-  { name: "Azienda Dieci", sector: "Media" },
-  { name: "Azienda Undici", sector: "Assicurazioni" },
-  { name: "Azienda Dodici", sector: "Food & Beverage" },
-];
-
-export type StandingRow = {
-  position: number;
-  team: string;
-  played: number;
-  points: number;
-};
-
-// PLACEHOLDER — struttura pronta per essere collegata ai risultati reali
-export const standings: StandingRow[] = [
-  { position: 1, team: "Azienda A", played: 4, points: 12 },
-  { position: 2, team: "Azienda B", played: 4, points: 9 },
-  { position: 3, team: "Azienda C", played: 4, points: 7 },
-  { position: 4, team: "Azienda D", played: 4, points: 6 },
-  { position: 5, team: "Azienda E", played: 4, points: 4 },
+// Solo premi individuali confermati da fonte attendibile.
+export const individualAwards: IndividualAward[] = [
+  { year: "2025", award: "Miglior giocatore", name: "Luca Sireus (Abbi Group)" }, // fonte: ornews.it — verificare
+  { year: "2026", award: "Miglior giocatore", name: "Andrea Delussu" }, // fonte: oristanonoi.it
+  { year: "2026", award: "Miglior portiere", name: "Gabriele Cossu" }, // fonte: oristanonoi.it
 ];
 
 export type SponsorTier = "main" | "gold" | "partner";
@@ -170,7 +204,7 @@ export const faqItems = [
   {
     question: "Chi può partecipare?",
     answer:
-      "Qualsiasi azienda può iscrivere una o più squadre: non è richiesto un settore specifico, solo la voglia di scendere in campo.",
+      "Qualsiasi azienda o realtà del territorio di Oristano può iscrivere una squadra di calcio a 5: non è richiesto un settore specifico, solo la voglia di scendere in campo.",
   },
   {
     question: "Quante persone servono per formare una squadra?",
@@ -190,22 +224,22 @@ export const faqItems = [
   {
     question: "Cosa comprende l'iscrizione?",
     answer:
-      "L'iscrizione comprende la partecipazione al torneo, il kit squadra e l'accesso a tutte le attività della giornata. I dettagli definitivi verranno confermati via email.", // PLACEHOLDER
+      "L'iscrizione comprende la partecipazione al torneo di calcio a 5 e l'accesso alle attività della giornata. I dettagli definitivi verranno confermati via email.", // PLACEHOLDER
   },
   {
     question: "Dove si svolge l'evento?",
     answer:
-      "La location è in fase di conferma: verrà comunicata a tutte le aziende iscritte non appena disponibile.", // PLACEHOLDER
+      "Il torneo si svolge a Oristano. La location della prossima edizione è in fase di conferma e verrà comunicata a tutte le squadre iscritte.", // PLACEHOLDER sul campo esatto
   },
   {
     question: "Come vengono organizzate le partite?",
     answer:
-      "Le squadre vengono suddivise in gironi con calendario e orari comunicati in anticipo, seguiti da una fase finale a eliminazione diretta.",
+      "Il torneo si sviluppa con una fase a gironi seguita da semifinali e finale, come nelle edizioni già disputate.",
   },
   {
     question: "Ci sono premi?",
     answer:
-      "Sì: sono previsti premi per le prime squadre classificate e riconoscimenti individuali. I dettagli finali sono in definizione.", // PLACEHOLDER
+      "Sì: alla squadra vincitrice e ai migliori giocatori vengono assegnati riconoscimenti a fine giornata, come nell'Albo d'Oro delle edizioni passate.",
   },
   {
     question: "Come posso diventare sponsor?",
@@ -249,7 +283,7 @@ export const adminNavSections = [
   { label: "Squadre", href: "/admin/squadre" },
   { label: "Partite", href: "/admin/partite" },
   { label: "Risultati", href: "/admin/risultati" },
-  { label: "Classifica", href: "/admin/classifica" },
+  { label: "Albo d'oro", href: "/admin/albo-doro" },
   { label: "Sponsor", href: "/admin/sponsor" },
   { label: "Iscrizioni", href: "/admin/iscrizioni" },
   { label: "Comunicazioni", href: "/admin/comunicazioni" },

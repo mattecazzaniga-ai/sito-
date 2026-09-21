@@ -15,7 +15,7 @@ export function FinalCta() {
       <div className="container-page flex flex-col items-center gap-8 text-center">
         <Reveal variants={fadeUp}>
           <h2 className="max-w-3xl text-balance font-display text-4xl font-bold uppercase leading-[0.95] text-white sm:text-6xl lg:text-7xl">
-            La prossima azienda in campo potrebbe essere la tua.
+            La prossima squadra di calcio a 5 potrebbe essere la tua azienda.
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
