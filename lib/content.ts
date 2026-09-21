@@ -182,10 +182,30 @@ export type IndividualAward = {
 
 // Solo premi individuali confermati da fonte attendibile.
 export const individualAwards: IndividualAward[] = [
-  { year: "2025", award: "Miglior giocatore", name: "Luca Sireus (Abbi Group)" }, // fonte: ornews.it — verificare
-  { year: "2025", award: "Miglior portiere", name: "Ivan Zucca (Fette di Sole)" },
-  { year: "2026", award: "Miglior giocatore", name: "Andrea Delussu" }, // fonte: oristanonoi.it
-  { year: "2026", award: "Miglior portiere", name: "Gabriele Cossu" }, // fonte: oristanonoi.it
+  {
+    year: "2025",
+    award: "Miglior giocatore",
+    name: "Luca Sireus (Abbi Group)", // fonte: ornews.it — verificare
+    photo: "/images/premio-2025-miglior-giocatore-sireus.jpg",
+  },
+  {
+    year: "2025",
+    award: "Miglior portiere",
+    name: "Ivan Zucca (Fette di Sole)",
+    photo: "/images/premio-2025-miglior-portiere-zucca.jpg",
+  },
+  {
+    year: "2026",
+    award: "Miglior giocatore",
+    name: "Andrea Delussu (Diesa S.r.l. / McDonald's)", // fonte: oristanonoi.it
+    photo: "/images/premio-2026-miglior-giocatore-delussu.jpg",
+  },
+  {
+    year: "2026",
+    award: "Miglior portiere",
+    name: "Gabriele Cossu (Consorzio UNO)", // fonte: oristanonoi.it
+    photo: "/images/premio-2026-miglior-portiere-cossu.jpg",
+  },
 ];
 
 export type SponsorTier = "main" | "gold" | "partner";
