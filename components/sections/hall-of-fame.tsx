@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Medal, Trophy } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
@@ -10,26 +11,45 @@ export function HallOfFame() {
         <div>
           <SectionHeading eyebrow="La storia sul campo" title="Albo d'oro" />
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {hallOfFame.map((entry, index) => (
               <Reveal key={entry.year} delay={index * 0.06}>
-                <div className="flex h-full flex-col gap-4 rounded-3xl border border-neutral-200 bg-neutral-50 p-8">
-                  <span className="font-display text-4xl font-bold tabular-nums text-ink sm:text-5xl">
-                    {entry.year}
-                  </span>
-                  {entry.verified ? (
-                    <>
-                      <p className="flex items-center gap-2 font-display text-lg font-semibold uppercase tracking-wide text-ink sm:text-xl">
-                        <Trophy className="h-5 w-5 shrink-0 text-red" aria-hidden="true" />
-                        {entry.winner}
-                      </p>
-                      <p className="text-sm leading-relaxed text-neutral-600">{entry.note}</p>
-                    </>
+                <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-neutral-200 bg-neutral-50 transition-all duration-[400ms] ease-out hover:-translate-y-1.5 hover:shadow-[0_28px_56px_-28px_rgba(0,0,0,0.28)]">
+                  {entry.verified && entry.photo ? (
+                    <div className="relative aspect-[4/3] w-full overflow-hidden">
+                      <Image
+                        src={entry.photo}
+                        alt={`Squadra vincitrice ${entry.winner} — edizione ${entry.year} di Aziende in Campo`}
+                        fill
+                        sizes="(min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
+                      <span className="absolute bottom-4 left-5 font-display text-4xl font-bold tabular-nums text-white sm:text-5xl">
+                        {entry.year}
+                      </span>
+                    </div>
                   ) : (
-                    <p className="font-display text-base font-medium uppercase tracking-wide text-neutral-400">
-                      Risultato da inserire
-                    </p>
+                    <span className="p-8 pb-0 font-display text-4xl font-bold tabular-nums text-ink sm:text-5xl">
+                      {entry.year}
+                    </span>
                   )}
+
+                  <div className="flex flex-1 flex-col gap-2 p-8">
+                    {entry.verified ? (
+                      <>
+                        <p className="flex items-center gap-2 font-display text-lg font-semibold uppercase tracking-wide text-ink sm:text-xl">
+                          <Trophy className="h-5 w-5 shrink-0 text-red" aria-hidden="true" />
+                          {entry.winner}
+                        </p>
+                        <p className="text-sm leading-relaxed text-neutral-600">{entry.note}</p>
+                      </>
+                    ) : (
+                      <p className="font-display text-base font-medium uppercase tracking-wide text-neutral-400">
+                        Risultato da inserire
+                      </p>
+                    )}
+                  </div>
                 </div>
               </Reveal>
             ))}

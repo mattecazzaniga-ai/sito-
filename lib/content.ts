@@ -134,7 +134,6 @@ export const participants: string[] = [
   "Fette di Sole (Gruppo Cellino)",
   "Abbi Group",
   "Vestis",
-  "Bump Bar (McDonald's)",
   "Ondulor",
   "Catte Cup",
   "F.lli Cellino",
@@ -147,6 +146,7 @@ export type HallOfFameEntry = {
   winner: string;
   note: string;
   verified: boolean;
+  photo?: string;
 };
 
 /**
@@ -160,12 +160,14 @@ export const hallOfFame: HallOfFameEntry[] = [
     winner: "Fette di Sole (Gruppo Cellino)",
     note: "La prima edizione del torneo di calcio a 5 è stata vinta da Fette di Sole.",
     verified: true, // fonte: ornews.it — verificare prima della pubblicazione
+    photo: "/images/albo-doro-2025-fette-di-sole.jpg",
   },
   {
     year: "2026",
     winner: "Diesa S.r.l. / McDonald's",
     note: "La seconda edizione del torneo di calcio a 5 è stata vinta da Diesa Srl / McDonald's.",
     verified: true, // fonte: oristanonoi.it
+    photo: "/images/albo-doro-2026-diesa-mcdonalds.jpg",
   },
 ];
 
@@ -178,6 +180,7 @@ export type IndividualAward = {
 // Solo premi individuali confermati da fonte attendibile.
 export const individualAwards: IndividualAward[] = [
   { year: "2025", award: "Miglior giocatore", name: "Luca Sireus (Abbi Group)" }, // fonte: ornews.it — verificare
+  { year: "2025", award: "Miglior portiere", name: "Ivan Zucca (Fette di Sole)" },
   { year: "2026", award: "Miglior giocatore", name: "Andrea Delussu" }, // fonte: oristanonoi.it
   { year: "2026", award: "Miglior portiere", name: "Gabriele Cossu" }, // fonte: oristanonoi.it
 ];
