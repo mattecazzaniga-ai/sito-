@@ -137,6 +137,8 @@ export const participants: string[] = [
   "Ondulor",
   "Catte Cup",
   "F.lli Cellino",
+  "Cellino",
+  "Simec",
   "Diesa S.r.l. (McDonald's)",
   "Consorzio UNO – Università di Oristano",
 ];
@@ -175,6 +177,7 @@ export type IndividualAward = {
   year: string;
   award: string;
   name: string;
+  photo?: string; // PLACEHOLDER — foto in arrivo, una per premio
 };
 
 // Solo premi individuali confermati da fonte attendibile.
