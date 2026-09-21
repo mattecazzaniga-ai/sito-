@@ -72,9 +72,8 @@ export function Hero() {
             variants={item}
             className="max-w-xl text-balance text-lg font-medium text-white/80 sm:text-xl"
           >
-            Il calcio a 5 delle aziende: un torneo che porta colleghi e
-            aziende del territorio in campo, trasformando una giornata di
-            sport in un&rsquo;esperienza da vivere insieme.
+            Molto più di un torneo: la giornata in cui la tua azienda
+            diventa una squadra.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap gap-3">

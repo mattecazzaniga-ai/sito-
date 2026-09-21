@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ContattiPage() {
   return (
     <>
-      <Navbar />
+      <Navbar forceSolid />
       <main className="flex-1 bg-neutral-100 pt-36 pb-24" id="partner">
         <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           <div className="flex flex-col gap-6">

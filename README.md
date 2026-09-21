@@ -16,16 +16,27 @@ npm run build   # build di produzione
 npm run lint    # ESLint
 ```
 
+## Struttura del sito
+
+- `/` — home: hero, cos'è il torneo, numeri, valori, perché partecipare, testimonianze, aziende partecipanti, come funziona, format, sponsor, iscrizione, FAQ.
+- `/storia` — pagina dedicata alla storia del progetto (timeline edizioni). Contenuto narrativo esteso in arrivo.
+- `/albo-doro` — pagina dedicata a vincitori e premi individuali di ogni edizione, con CTA finale verso l'iscrizione.
+- `/contatti`, `/privacy-policy`, `/cookie-policy` — pagine di servizio.
+
 ## Contenuti da sostituire prima del lancio
 
 Tutti i testi/dati editabili sono centralizzati in **`lib/content.ts`**. Cerca i commenti `PLACEHOLDER` per trovare rapidamente cosa manca:
 
 - Data e location della prossima edizione (`eventInfo`)
 - Dettagli non ancora ufficiali del format (regolamento, durata partite) (`formatDetails`)
+- Punteggio esatto della finale 2025 (`hallOfFame`, campo `score` mancante per quell'edizione)
 - Sponsor e relativo livello (`sponsors`)
+- Testimonianze reali (`testimonials`, oggi vuoto — la sezione mostra un placeholder "in arrivo" finché resta vuoto)
 - Contatti (email, telefono, social) (`contact`)
 - Risposte FAQ con prezzo/location non ancora confermati
 - Dominio definitivo (`siteConfig.url`, usato anche per la sitemap e i meta Open Graph)
+
+`impactStats` (edizioni disputate, atleti, presenze, aziende coinvolte) sono numeri reali forniti dall'organizzatore, non stime: aggiornarli a ogni nuova edizione.
 
 ### Dati storici: accuratezza prima di tutto
 

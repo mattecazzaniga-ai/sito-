@@ -9,7 +9,7 @@ export function Participants() {
       <div className="container-page flex flex-col gap-14">
         <SectionHeading
           eyebrow="I protagonisti"
-          title="Chi è già sceso in campo."
+          title="Chi ha già scelto di scendere in campo."
           description="Aziende e realtà che hanno già partecipato ad Aziende in Campo."
         />
 

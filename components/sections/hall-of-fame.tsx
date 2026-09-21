@@ -4,7 +4,6 @@ import { useId, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Medal, Trophy } from "lucide-react";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { PlaceholderVisual } from "@/components/ui/placeholder-visual";
 import { hallOfFame, individualAwards, type HallOfFameEntry } from "@/lib/content";
@@ -15,15 +14,9 @@ export function HallOfFame() {
   const [openYear, setOpenYear] = useState<string | null>(hallOfFame[hallOfFame.length - 1]?.year ?? null);
 
   return (
-    <section className="section-y bg-white">
+    <section className="bg-white pb-20 pt-4 sm:pb-32">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="La storia sul campo"
-          title="Albo d'oro"
-          description="Clicca su un'edizione per scoprire il vincitore e i premi individuali."
-        />
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2">
           {hallOfFame.map((entry, index) => (
             <Reveal key={entry.year} delay={index * 0.06}>
               <HallOfFameCard

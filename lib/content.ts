@@ -29,11 +29,10 @@ export const contact = {
 
 export const navLinks = [
   { label: "Home", href: "/#home" },
-  { label: "L'evento", href: "/#evento" },
-  { label: "Come funziona", href: "/#come-funziona" },
-  { label: "Aziende", href: "/#aziende" },
-  { label: "Sponsor", href: "/#sponsor" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Storia", href: "/storia" },
+  { label: "Perché partecipare", href: "/#perche-partecipare" },
+  { label: "Albo d'oro", href: "/albo-doro" },
+  { label: "Iscrizioni", href: "/#iscrizione" },
 ];
 
 export const eventInfo = {
@@ -55,6 +54,73 @@ export const eventIntro = {
     { label: "Territorio", value: "Oristano" },
   ],
 };
+
+/**
+ * Numeri reali comunicati dall'organizzatore (non stime): aggiornare a ogni
+ * nuova edizione. Niente extra qui — solo cifre confermate.
+ */
+export const impactStats = [
+  { value: 2, suffix: "", label: "Edizioni disputate" },
+  { value: 200, suffix: "+", label: "Atleti in campo" },
+  { value: 500, suffix: "+", label: "Presenze totali" },
+  { value: 10, suffix: "", label: "Aziende coinvolte" },
+];
+
+export const valuesContent = {
+  eyebrow: "Il vero valore",
+  title: "Le relazioni non si costruiscono in ufficio.",
+  description:
+    "Aziende in Campo crea le condizioni perché nascano davvero: sul campo, in una giornata che i colleghi ricorderanno.",
+  pillars: [
+    { icon: "handshake", label: "Fiducia" },
+    { icon: "users", label: "Collaborazione" },
+    { icon: "heart", label: "Appartenenza" },
+    { icon: "camera", label: "Ricordi" },
+  ] as const,
+  solution: {
+    title: "La soluzione è questa giornata.",
+    description:
+      "Una giornata che crea una vera squadra: non servono campioni, serve solo la voglia di partecipare.",
+    highlights: ["Tutti possono giocare", "Fair play", "Divertimento"],
+  },
+};
+
+export const whyParticipate = {
+  eyebrow: "Perché partecipare",
+  title: "Non lo diciamo noi. Lo dicono i numeri.",
+  description: "Ecco cosa succede davvero quando la tua azienda scende in campo.",
+  benefits: [
+    {
+      icon: "award",
+      title: "Orgoglio",
+      description: "Orgoglio di rappresentare la tua azienda.",
+    },
+    {
+      icon: "camera",
+      title: "Copertura ufficiale",
+      description: "Copertura ufficiale di tutta la giornata: ricordi che restano.",
+    },
+    {
+      icon: "coffee",
+      title: "Momento conviviale",
+      description: "Incluso nella giornata: momenti per conoscersi anche fuori dall'ufficio.",
+    },
+    {
+      icon: "sparkles",
+      title: "Emozioni",
+      description: "Le emozioni vere di una giornata di sport vissuta insieme ai colleghi.",
+    },
+  ] as const,
+};
+
+export type Testimonial = {
+  quote: string;
+  author: string;
+  role: string;
+};
+
+// PLACEHOLDER — recensioni reali in arrivo dall'organizzatore
+export const testimonials: Testimonial[] = [];
 
 export const howItWorksSteps = [
   {
@@ -145,7 +211,10 @@ export const participants: string[] = [
 
 export type HallOfFameEntry = {
   year: string;
+  date?: string;
   winner: string;
+  opponent?: string;
+  score?: string;
   note: string;
   verified: boolean;
   photo?: string;
@@ -159,16 +228,22 @@ export type HallOfFameEntry = {
 export const hallOfFame: HallOfFameEntry[] = [
   {
     year: "2025",
+    date: "30 novembre 2025",
     winner: "Fette di Sole (Gruppo Cellino)",
-    note: "La prima edizione del torneo di calcio a 5 è stata vinta da Fette di Sole.",
-    verified: true, // fonte: ornews.it — verificare prima della pubblicazione
+    opponent: "Abbi Group",
+    // score: PLACEHOLDER — punteggio esatto della finale da confermare
+    note: "Il 30 novembre 2025 Fette di Sole ha vinto la finale della prima edizione contro Abbi Group.",
+    verified: true, // fonte: organizzatore + ornews.it — verificare prima della pubblicazione
     photo: "/images/albo-doro-2025-fette-di-sole.jpg",
   },
   {
     year: "2026",
+    date: "3 maggio 2026",
     winner: "Diesa S.r.l. / McDonald's",
-    note: "La seconda edizione del torneo di calcio a 5 è stata vinta da Diesa Srl / McDonald's.",
-    verified: true, // fonte: oristanonoi.it
+    opponent: "Consorzio UNO Oristano",
+    score: "3-0",
+    note: "Il 3 maggio 2026 Diesa S.r.l. / McDonald's ha vinto la finale della seconda edizione 3-0 contro Consorzio UNO Oristano.",
+    verified: true, // fonte: organizzatore + oristanonoi.it
     photo: "/images/albo-doro-2026-diesa-mcdonalds.jpg",
   },
 ];
@@ -207,6 +282,11 @@ export const individualAwards: IndividualAward[] = [
     photo: "/images/premio-2026-miglior-portiere-cossu.jpg",
   },
 ];
+
+export const hallOfFameCta = {
+  title: "Il tuo nome può essere il prossimo su questa bacheca.",
+  description: "Comincia da qui.",
+};
 
 export type SponsorTier = "main" | "gold" | "partner";
 
@@ -280,10 +360,10 @@ export const footerLinks = {
       title: "Naviga",
       links: [
         { label: "Home", href: "/#home" },
-        { label: "L'evento", href: "/#evento" },
-        { label: "Aziende", href: "/#aziende" },
-        { label: "Sponsor", href: "/#sponsor" },
-        { label: "FAQ", href: "/#faq" },
+        { label: "Storia", href: "/storia" },
+        { label: "Perché partecipare", href: "/#perche-partecipare" },
+        { label: "Albo d'oro", href: "/albo-doro" },
+        { label: "Iscrizioni", href: "/#iscrizione" },
       ],
     },
     {

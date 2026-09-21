@@ -9,10 +9,11 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { EASE_OUT } from "@/lib/motion";
 
-export function Navbar() {
+export function Navbar({ forceSolid = false }: { forceSolid?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const { scrollY } = useScroll();
+  const isSolid = forceSolid || isScrolled;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 24);
@@ -30,7 +31,7 @@ export function Navbar() {
       <div
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between transition-all duration-500 ease-out",
-          isScrolled
+          isSolid
             ? "mt-3 rounded-full border border-white/10 bg-ink/80 px-5 py-3 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.5)] backdrop-blur-md sm:mx-4 lg:mx-auto"
             : "px-5 py-6 sm:px-8"
         )}

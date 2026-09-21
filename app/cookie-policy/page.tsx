@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function CookiePolicyPage() {
   return (
     <>
-      <Navbar />
+      <Navbar forceSolid />
       <main className="flex-1 bg-white pt-36 pb-24">
         <div className="container-page max-w-3xl">
           <h1 className="font-display text-4xl font-bold uppercase text-ink sm:text-5xl">Cookie Policy</h1>
