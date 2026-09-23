@@ -3,12 +3,13 @@
 import { useRef, useState, type FormEvent } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { CheckCircle2, Loader2, TriangleAlert } from "lucide-react";
+import { Check, CheckCircle2, Loader2, TriangleAlert } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { TextField, TextareaField } from "@/components/ui/form-field";
 import { EASE_OUT } from "@/lib/motion";
+import { ctaLabels, registrationContent } from "@/lib/content";
 
 type FormState = {
   azienda: string;
@@ -92,18 +93,30 @@ export function Registration() {
       <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
         <div className="flex flex-col gap-8">
           <SectionHeading
-            eyebrow="Iscrizione"
-            title="Porta la tua azienda in campo."
-            description="Contattaci o clicca su &laquo;Iscrivi la tua azienda&raquo;: ti ricontatteremo per definire insieme i dettagli."
+            eyebrow={registrationContent.eyebrow}
+            title={registrationContent.title}
+            description={registrationContent.description}
           />
-          <Reveal delay={0.1} className="hidden lg:block">
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[3/4]">
+          <Reveal delay={0.1}>
+            <ul className="flex flex-col gap-3">
+              {registrationContent.reassurance.map((point) => (
+                <li key={point} className="flex items-start gap-3 text-base text-neutral-700">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green text-white">
+                    <Check className="h-3 w-3" strokeWidth={3} aria-hidden="true" />
+                  </span>
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal delay={0.15} className="hidden lg:block">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
               <Image
                 src="/images/azione-corsa-mcdonalds.jpg"
                 alt="Giocatore in corsa durante una partita di Aziende in Campo"
                 fill
                 sizes="35vw"
-                className="object-cover"
+                className="object-cover object-[50%_35%]"
               />
             </div>
           </Reveal>
@@ -119,11 +132,8 @@ export function Registration() {
               role="status"
             >
               <CheckCircle2 className="h-10 w-10 text-green" aria-hidden="true" />
-              <h3 className="font-display text-2xl font-semibold uppercase text-ink">Richiesta inviata</h3>
-              <p className="text-neutral-600">
-                Grazie! Abbiamo ricevuto la tua richiesta di iscrizione: il nostro team ti ricontatterà
-                a breve via email per i prossimi passi.
-              </p>
+              <h3 className="font-display text-2xl font-semibold uppercase text-ink">{registrationContent.successTitle}</h3>
+              <p className="text-neutral-600">{registrationContent.successMessage}</p>
               <Button variant="secondary" onClick={() => setStatus("idle")}>
                 Invia un&rsquo;altra iscrizione
               </Button>
@@ -192,7 +202,7 @@ export function Registration() {
 
               <TextareaField
                 label="Note"
-                placeholder="Richieste particolari, numero di squadre, disponibilità..."
+                placeholder="Richieste particolari, numero di squadre, disponibilità…"
                 value={form.note}
                 onChange={(e) => update("note", e.target.value)}
                 rows={4}
@@ -210,7 +220,7 @@ export function Registration() {
                     Invio in corso
                   </>
                 ) : (
-                  "Iscrivi la tua azienda"
+                  ctaLabels.register
                 )}
               </Button>
             </form>

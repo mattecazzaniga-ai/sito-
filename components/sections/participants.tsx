@@ -2,22 +2,22 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Marquee } from "@/components/ui/marquee";
-import { participants, type Participant } from "@/lib/content";
+import { participants, participantsContent, type Participant } from "@/lib/content";
 
 export function Participants() {
   return (
-    <section id="aziende" className="section-y bg-neutral-100">
+    <section id="aziende" className="section-y bg-white">
       <div className="container-page flex flex-col gap-14">
         <SectionHeading
-          eyebrow="I protagonisti"
-          title="Chi ha già scelto di scendere in campo."
-          description="Aziende e realtà che hanno già partecipato ad Aziende in Campo."
+          eyebrow={participantsContent.eyebrow}
+          title={participantsContent.title}
+          description={participantsContent.description}
         />
 
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {participants.map((participant, index) => (
             <Reveal key={participant.name} delay={index * 0.03}>
-              <div className="group flex h-full flex-col items-center justify-center gap-3 rounded-2xl border border-neutral-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-green/30 hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.2)]">
+              <div className="group flex h-full flex-col items-center justify-center gap-3 rounded-3xl border border-neutral-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-green/30 hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.2)]">
                 <ParticipantMark participant={participant} />
                 <p className="font-display text-sm font-semibold uppercase tracking-wide text-ink">
                   {participant.name}

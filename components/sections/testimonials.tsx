@@ -1,15 +1,17 @@
 import { Quote } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { testimonials } from "@/lib/content";
+import { testimonials, testimonialsContent } from "@/lib/content";
+import { Card } from "@/components/ui/card";
 
 export function Testimonials() {
   return (
     <section className="section-y bg-neutral-100">
       <div className="container-page flex flex-col gap-12">
         <SectionHeading
-          eyebrow="Parola alle aziende"
-          title="Chi c'era, lo racconta così."
+          eyebrow={testimonialsContent.eyebrow}
+          title={testimonialsContent.title}
+          description={testimonialsContent.description}
         />
 
         {testimonials.length === 0 ? (
@@ -34,15 +36,15 @@ export function Testimonials() {
         ) : (
           <div className="grid gap-5 sm:grid-cols-3">
             {testimonials.map((testimonial, index) => (
-              <Reveal key={testimonial.author} delay={index * 0.05}>
-                <div className="flex h-full flex-col gap-4 rounded-3xl border border-neutral-200 bg-white p-7">
+              <Reveal key={testimonial.quote} delay={index * 0.05}>
+                <Card>
                   <Quote className="h-6 w-6 text-green" aria-hidden="true" />
-                  <p className="text-sm leading-relaxed text-neutral-700">&ldquo;{testimonial.quote}&rdquo;</p>
-                  <div className="mt-auto">
-                    <p className="font-display text-sm font-semibold text-ink">{testimonial.author}</p>
+                  <blockquote className="text-base leading-relaxed text-neutral-700">&ldquo;{testimonial.quote}&rdquo;</blockquote>
+                  <div className="mt-auto border-t border-neutral-200 pt-4">
+                    <p className="font-display text-sm font-semibold uppercase tracking-wide text-ink">{testimonial.author}</p>
                     <p className="text-xs text-neutral-500">{testimonial.role}</p>
                   </div>
-                </div>
+                </Card>
               </Reveal>
             ))}
           </div>

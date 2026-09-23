@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
+import { Eyebrow } from "@/components/ui/eyebrow";
 
 type SectionHeadingProps = {
   eyebrow?: string;
@@ -31,15 +32,7 @@ export function SectionHeading({
     >
       {eyebrow ? (
         <Reveal>
-          <span
-            className={cn(
-              "inline-flex items-center gap-2 font-display text-xs font-semibold uppercase tracking-[0.25em]",
-              isLight ? "text-green-light" : "text-green"
-            )}
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-current" aria-hidden="true" />
-            {eyebrow}
-          </span>
+          <Eyebrow tone={tone}>{eyebrow}</Eyebrow>
         </Reveal>
       ) : null}
       <Reveal delay={0.05}>

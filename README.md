@@ -23,6 +23,10 @@ npm run lint    # ESLint
 - `/albo-doro` — pagina dedicata a vincitori e premi individuali di ogni edizione, con CTA finale verso l'iscrizione.
 - `/contatti`, `/privacy-policy`, `/cookie-policy` — pagine di servizio.
 
+## Voce, testi e stile
+
+Prima di scrivere o modificare un testo leggi **[`docs/brand-guidelines.md`](docs/brand-guidelines.md)**: posizionamento, voce, terminologia, regole (si dà del tu, titoli con il punto, CTA fisse «Iscrivi la tua azienda» / «Diventa partner») e sistema visivo (alternanza degli sfondi, card, occhielli). Tutti i testi del sito, titoli di sezione compresi, stanno in `lib/content.ts`; i componenti condivisi per restare uniformi sono `Eyebrow`, `PageHeader`, `Card` / `IconBadge` in `components/ui/`.
+
 ## Contenuti da sostituire prima del lancio
 
 Tutti i testi/dati editabili sono centralizzati in **`lib/content.ts`**. Cerca i commenti `PLACEHOLDER` per trovare rapidamente cosa manca:

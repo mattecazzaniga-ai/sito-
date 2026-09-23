@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { navLinks } from "@/lib/content";
+import { ctaLabels, navLinks } from "@/lib/content";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { EASE_OUT } from "@/lib/motion";
@@ -65,7 +65,7 @@ export function Navbar({ forceSolid = false }: { forceSolid?: boolean }) {
 
         <div className="hidden lg:block">
           <Button href="/#iscrizione" size="md">
-            Iscrivi la tua azienda
+            {ctaLabels.register}
           </Button>
         </div>
 
@@ -121,7 +121,7 @@ export function Navbar({ forceSolid = false }: { forceSolid?: boolean }) {
               className="mt-4 w-full"
               onClick={() => setIsMobileOpen(false)}
             >
-              Iscrivi la tua azienda
+              {ctaLabels.register}
             </Button>
           </motion.div>
         ) : null}

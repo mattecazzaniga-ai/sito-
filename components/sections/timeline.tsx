@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
-import { timeline } from "@/lib/content";
+import { timeline, timelineContent } from "@/lib/content";
 
 export function Timeline() {
   const containerRef = useRef<HTMLOListElement>(null);
@@ -17,9 +17,9 @@ export function Timeline() {
     <section className="section-y bg-white">
       <div className="container-page">
         <SectionHeading
-          eyebrow="La giornata"
-          title="Il programma"
-          description="Come si svolge la giornata, passo dopo passo. Gli orari verranno comunicati più vicino all'evento."
+          eyebrow={timelineContent.eyebrow}
+          title={timelineContent.title}
+          description={timelineContent.description}
         />
 
         <ol ref={containerRef} className="relative mt-16 flex flex-col gap-12 pl-8 sm:pl-10">

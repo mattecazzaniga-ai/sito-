@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ImageIcon, X } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { galleryPhotos } from "@/lib/content";
+import { galleryContent, galleryPhotos } from "@/lib/content";
 import { EASE_OUT } from "@/lib/motion";
 
 export function Gallery() {
@@ -38,17 +38,17 @@ export function Gallery() {
   }, [openIndex, close, showPrev, showNext]);
 
   return (
-    <section id="galleria" className="section-y bg-white">
+    <section id="galleria" className="section-y bg-neutral-100">
       <div className="container-page flex flex-col gap-12">
         <SectionHeading
-          eyebrow="La libreria"
-          title="I momenti che raccontano Aziende in Campo."
-          description="Una raccolta in crescita, edizione dopo edizione: sfoglia le foto della giornata."
+          eyebrow={galleryContent.eyebrow}
+          title={galleryContent.title}
+          description={galleryContent.description}
         />
 
         {galleryPhotos.length === 0 ? (
           <Reveal>
-            <div className="flex aspect-[21/9] w-full flex-col items-center justify-center gap-2 rounded-3xl border border-dashed border-neutral-300 bg-neutral-50 text-neutral-300">
+            <div className="flex aspect-[21/9] w-full flex-col items-center justify-center gap-2 rounded-3xl border border-dashed border-neutral-300 bg-white text-neutral-300">
               <ImageIcon className="h-8 w-8" strokeWidth={1.25} aria-hidden="true" />
               <span className="font-display text-xs font-semibold uppercase tracking-widest">
                 Foto in arrivo
@@ -76,7 +76,7 @@ export function Gallery() {
                   <ImageIcon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
                 </span>
                 <span className="font-display text-sm font-semibold uppercase tracking-wide text-white sm:text-base">
-                  Sfoglia tutte le foto ({galleryPhotos.length})
+                  {galleryContent.openLabel} ({galleryPhotos.length} foto)
                 </span>
               </div>
             </button>

@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { history } from "@/lib/content";
+import { history, historyContent } from "@/lib/content";
 
 export function History() {
   const containerRef = useRef<HTMLOListElement>(null);
@@ -17,9 +17,9 @@ export function History() {
     <section className="section-y bg-neutral-100">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Le edizioni"
-          title="Anno per anno."
-          description="Il percorso di Aziende in Campo, edizione dopo edizione."
+          eyebrow={historyContent.eyebrow}
+          title={historyContent.title}
+          description={historyContent.description}
         />
 
         <ol

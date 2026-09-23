@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Calendar, Volleyball, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { eventInfo } from "@/lib/content";
+import { eventInfo, hero } from "@/lib/content";
 import { DUR, EASE_OUT, staggerContainer } from "@/lib/motion";
 
 const metaItems = [
@@ -52,7 +52,7 @@ export function Hero() {
         <motion.div variants={item} className="flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green" aria-hidden="true" />
-            Il torneo di calcio a 5 tra aziende
+            {hero.badge}
           </span>
         </motion.div>
 
@@ -61,9 +61,9 @@ export function Hero() {
             variants={item}
             className="font-display text-[16vw] font-bold uppercase leading-[0.85] tracking-tight text-white sm:text-[9rem] lg:text-[10rem]"
           >
-            Aziende
+            {hero.titleTop}
             <br />
-            <span className="text-green">In Campo</span>
+            <span className="text-green">{hero.titleBottom}</span>
           </motion.h1>
         </div>
 
@@ -72,16 +72,15 @@ export function Hero() {
             variants={item}
             className="max-w-xl text-balance text-lg font-medium text-white/80 sm:text-xl"
           >
-            Molto più di un torneo: la giornata in cui la tua azienda
-            diventa una squadra.
+            {hero.subtitle}
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap gap-3">
             <Button href="/#iscrizione" size="lg">
-              Iscrivi la tua azienda
+              {hero.primaryCta}
             </Button>
             <Button href="/#evento" size="lg" variant="outline-light">
-              Scopri il torneo
+              {hero.secondaryCta}
             </Button>
           </motion.div>
         </div>

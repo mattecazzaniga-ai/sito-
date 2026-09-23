@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/sections/contact-form";
-import { contact, siteConfig } from "@/lib/content";
+import { PageHeader } from "@/components/ui/page-header";
+import { contact, contactPage, siteConfig } from "@/lib/content";
+import { Mail, Phone } from "lucide-react";
+import { InstagramIcon, TikTokIcon } from "@/components/icons/social-icons";
 
 const title = "Contatti";
-const description = `Contatta il team di ${siteConfig.name} per informazioni o per diventare partner dell'evento.`;
+const description =
+  "Contatta Aziende in Campo per iscrivere la tua azienda al torneo di calcio a 5 di Oristano o per diventare partner dell'evento.";
 
 export const metadata: Metadata = {
   title,
@@ -24,28 +28,42 @@ export default function ContattiPage() {
   return (
     <>
       <Navbar forceSolid />
-      <main className="flex-1 bg-neutral-100 pt-36 pb-24" id="partner">
+      <main className="flex-1 bg-neutral-100 pt-32 pb-20 sm:pt-40 sm:pb-32" id="partner">
         <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
-          <div className="flex flex-col gap-6">
-            <span className="font-display text-xs font-semibold uppercase tracking-[0.25em] text-green">
-              Contatti
-            </span>
-            <h1 className="font-display text-4xl font-bold uppercase leading-[0.95] text-ink sm:text-5xl">
-              Parliamone.
-            </h1>
-            <p className="max-w-md text-neutral-600">
-              Per informazioni sull&rsquo;evento, sull&rsquo;iscrizione o per proposte di partnership,
-              scrivici tramite il form oppure direttamente ai contatti qui sotto.
-            </p>
-            <div className="flex flex-col gap-1 pt-4 text-sm">
-              <a href={`mailto:${contact.email}`} className="font-medium text-ink hover:text-green">
-                {contact.email}
-              </a>
-              <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="font-medium text-ink hover:text-green">
-                {contact.phone}
-              </a>
+          <PageHeader eyebrow={contactPage.eyebrow} title={contactPage.title} description={contactPage.description}>
+            <ul className="flex flex-col gap-3 pt-4">
+              {[
+                { icon: Mail, label: contact.email, href: `mailto:${contact.email}` },
+                { icon: Phone, label: contact.phone, href: `tel:${contact.phone.replace(/\s/g, "")}` },
+              ].map(({ icon: Icon, label, href }) => (
+                <li key={href}>
+                  <a href={href} className="group inline-flex items-center gap-3 font-medium text-ink transition-colors hover:text-green">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-green/10 text-green transition-colors group-hover:bg-green group-hover:text-white">
+                      <Icon className="h-4 w-4" strokeWidth={1.75} aria-hidden="true" />
+                    </span>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="flex items-center gap-3 pt-2">
+              {[
+                { label: "Instagram", href: contact.instagram, Icon: InstagramIcon },
+                { label: "TikTok", href: contact.tiktok, Icon: TikTokIcon },
+              ].map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-300 text-ink transition-colors hover:border-green hover:bg-green hover:text-white"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
-          </div>
+          </PageHeader>
 
           <ContactForm />
         </div>

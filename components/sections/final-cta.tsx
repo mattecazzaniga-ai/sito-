@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { fadeUp } from "@/lib/motion";
+import { ctaLabels, finalCta } from "@/lib/content";
 
 export function FinalCta() {
   return (
@@ -20,16 +21,19 @@ export function FinalCta() {
       <div className="container-page flex flex-col items-center gap-8 text-center">
         <Reveal variants={fadeUp}>
           <h2 className="max-w-3xl text-balance font-display text-4xl font-bold uppercase leading-[0.95] text-white sm:text-6xl lg:text-7xl">
-            La prossima squadra di calcio a 5 potrebbe essere la tua azienda.
+            {finalCta.title}
           </h2>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <p className="max-w-xl text-balance text-lg text-white/75">{finalCta.description}</p>
         </Reveal>
         <Reveal delay={0.1}>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button href="/#iscrizione" size="lg">
-              Iscrivi la tua azienda
+              {ctaLabels.register}
             </Button>
             <Button href="/contatti#partner" size="lg" variant="outline-light">
-              Diventa partner
+              {ctaLabels.partner}
             </Button>
           </div>
         </Reveal>

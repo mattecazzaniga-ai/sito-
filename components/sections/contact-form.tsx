@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SelectField, TextField, TextareaField } from "@/components/ui/form-field";
@@ -17,6 +17,19 @@ const initialState: FormState = { nome: "", email: "", tipo: "generico", messagg
 export function ContactForm() {
   const [form, setForm] = useState<FormState>(initialState);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+
+  // Chi arriva da «Diventa partner» (/contatti#partner) trova già selezionata la richiesta giusta.
+  useEffect(() => {
+    const sync = () => {
+      if (window.location.hash === "#partner") setForm((prev) => ({ ...prev, tipo: "partnership" }));
+    };
+    const frame = requestAnimationFrame(sync);
+    window.addEventListener("hashchange", sync);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("hashchange", sync);
+    };
+  }, []);
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -43,7 +56,7 @@ export function ContactForm() {
     return (
       <div className="flex flex-col items-start gap-3 rounded-3xl border border-neutral-200 bg-white p-8" role="status">
         <CheckCircle2 className="h-8 w-8 text-green" aria-hidden="true" />
-        <h3 className="font-display text-xl font-semibold uppercase text-ink">Messaggio inviato</h3>
+        <h3 className="font-display text-xl font-semibold uppercase text-ink">Messaggio inviato.</h3>
         <p className="text-sm text-neutral-600">Ti risponderemo il prima possibile.</p>
         <Button variant="secondary" onClick={() => setStatus("idle")}>
           Invia un altro messaggio

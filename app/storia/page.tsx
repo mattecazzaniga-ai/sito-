@@ -6,7 +6,8 @@ import { History } from "@/components/sections/history";
 import { siteConfig } from "@/lib/content";
 
 const title = "Storia";
-const description = `La storia di ${siteConfig.name}, il torneo di calcio a 5 tra aziende del territorio di Oristano.`;
+const description =
+  "Come è nato Aziende in Campo, il torneo di calcio a 5 tra aziende di Oristano: l'idea, le edizioni e l'ambizione di crescere con il territorio.";
 
 export const metadata: Metadata = {
   title,

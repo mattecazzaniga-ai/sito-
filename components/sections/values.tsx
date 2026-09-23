@@ -1,6 +1,7 @@
 import { Camera, Handshake, Heart, UsersRound, type LucideIcon } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Card, IconBadge } from "@/components/ui/card";
 import { valuesContent } from "@/lib/content";
 
 const pillarIcons: Record<string, LucideIcon> = {
@@ -25,14 +26,13 @@ export function Values() {
             const Icon = pillarIcons[pillar.icon];
             return (
               <Reveal key={pillar.label} delay={index * 0.05}>
-                <div className="flex h-full flex-col items-start gap-4 rounded-3xl border border-neutral-200 bg-white p-7">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-green/10 text-green">
-                    <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
-                  </span>
-                  <p className="font-display text-xl font-semibold uppercase tracking-wide text-ink">
+                <Card>
+                  <IconBadge icon={Icon} />
+                  <h3 className="font-display text-xl font-semibold uppercase tracking-wide text-ink">
                     {pillar.label}
-                  </p>
-                </div>
+                  </h3>
+                  <p className="text-sm leading-relaxed text-neutral-600">{pillar.description}</p>
+                </Card>
               </Reveal>
             );
           })}

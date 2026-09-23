@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { PageHeader } from "@/components/ui/page-header";
 import { contact, siteConfig } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -14,9 +15,9 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <Navbar forceSolid />
-      <main className="flex-1 bg-white pt-36 pb-24">
+      <main className="flex-1 bg-white pt-32 pb-20 sm:pt-40 sm:pb-32">
         <div className="container-page max-w-3xl">
-          <h1 className="font-display text-4xl font-bold uppercase text-ink sm:text-5xl">Privacy Policy</h1>
+          <PageHeader eyebrow="Informazioni legali" title="Privacy Policy" />
           <p className="mt-4 text-sm text-neutral-500">
             Testo segnaposto — da sostituire con l&rsquo;informativa privacy definitiva redatta con il
             supporto di un consulente legale/DPO prima della pubblicazione online.

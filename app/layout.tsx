@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — Il torneo di calcio a 5 tra aziende`,
+    default: `${siteConfig.name} — Torneo di calcio a 5 tra aziende a Oristano`,
     template: `%s — ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -48,13 +48,13 @@ export const metadata: Metadata = {
     locale: siteConfig.locale,
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — Il torneo di calcio a 5 tra aziende`,
+    title: `${siteConfig.name} — Torneo di calcio a 5 tra aziende a Oristano`,
     description: siteConfig.description,
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: siteConfig.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Il torneo di calcio a 5 tra aziende`,
+    title: `${siteConfig.name} — Torneo di calcio a 5 tra aziende a Oristano`,
     description: siteConfig.description,
     images: ["/opengraph-image"],
   },

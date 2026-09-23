@@ -13,8 +13,9 @@ export const siteConfig = {
   name: "Aziende in Campo",
   shortName: "AiC",
   tagline: "Il calcio a 5 delle aziende.",
+  // Meta description: < 160 caratteri, parola chiave principale all'inizio.
   description:
-    "Aziende in Campo è il torneo di calcio a 5 tra aziende e realtà del territorio di Oristano: una giornata di sport, squadra e competizione fuori dal normale ambiente di lavoro.",
+    "Il torneo di calcio a 5 tra aziende di Oristano: una giornata di sport, team building e networking tra le realtà del territorio. Iscrivi la tua squadra.",
   url: "https://www.aziendeincampo.it", // PLACEHOLDER — dominio definitivo
   organizer: "Orisound",
   locale: "it_IT",
@@ -42,12 +43,31 @@ export const eventInfo = {
   location: "Via Ghilarza 1, Oristano", // sede: MC Sport Oristano
 };
 
+/**
+ * Testi della home, nell'ordine in cui compaiono. Voce, terminologia e regole
+ * di stile: docs/brand-guidelines.md (tu, titoli con il punto, CTA fisse).
+ */
+export const hero = {
+  badge: "Il torneo di calcio a 5 tra aziende",
+  titleTop: "Aziende",
+  titleBottom: "In Campo",
+  subtitle: "Una giornata di calcio a 5 in cui i colleghi diventano una squadra e le aziende del territorio si incontrano in campo.",
+  primaryCta: "Iscrivi la tua azienda",
+  secondaryCta: "Scopri il torneo",
+};
+
+/** Etichette fisse delle due CTA: stesse parole in tutto il sito. */
+export const ctaLabels = {
+  register: "Iscrivi la tua azienda",
+  partner: "Diventa partner",
+};
+
 export const eventIntro = {
-  eyebrow: "Il concept",
-  title: "Il calcio a 5, vissuto insieme.",
+  eyebrow: "Il torneo",
+  title: "Il team building che si gioca davvero.",
   paragraphs: [
-    "Aziende in Campo è il torneo di calcio a 5 che porta le aziende del territorio di Oristano fuori dai loro uffici: in campo, il gioco di squadra diventa il modo più naturale per fare vero team building.",
-    "Ogni partita è anche un'occasione di networking autentico: colleghi che si conoscono meglio, aziende che si incontrano senza il filtro di una riunione, relazioni che nascono mentre si gioca insieme.",
+    "Aziende in Campo è il torneo di calcio a 5 tra le aziende del territorio di Oristano: una giornata intera fuori dall'ufficio, in cui il gioco di squadra smette di essere uno slogan e diventa una partita da vincere insieme.",
+    "Tra una partita e l'altra succede quello che in riunione non succede: colleghi che si conoscono davvero, aziende che si incontrano senza formalità, relazioni che continuano anche dopo il fischio finale.",
   ],
   highlights: [
     { label: "Sport", value: "Calcio a 5" },
@@ -68,44 +88,49 @@ export const impactStats = [
 ];
 
 export const valuesContent = {
-  eyebrow: "Il vero valore",
-  title: "Le relazioni non si costruiscono in ufficio.",
-  description:
-    "Aziende in Campo crea le condizioni perché nascano davvero: sul campo, in una giornata che i colleghi ricorderanno.",
+  eyebrow: "Cosa resta",
+  title: "Le relazioni non nascono in ufficio. Nascono in campo.",
+  description: "Una giornata di sport lascia alla tua squadra qualcosa che dura più di un risultato.",
   pillars: [
-    { icon: "handshake", label: "Fiducia" },
-    { icon: "users", label: "Collaborazione" },
-    { icon: "heart", label: "Appartenenza" },
-    { icon: "camera", label: "Ricordi" },
+    { icon: "handshake", label: "Fiducia", description: "In campo ci si copre a vicenda. In ufficio si continua a farlo." },
+    { icon: "users", label: "Collaborazione", description: "Ruoli diversi, un solo obiettivo: come nel lavoro di ogni giorno." },
+    { icon: "heart", label: "Appartenenza", description: "Si gioca per la propria azienda, e lo si sente fin dal primo minuto." },
+    { icon: "camera", label: "Ricordi", description: "Foto, video e racconti di una giornata che i colleghi si porteranno dietro." },
   ] as const,
 };
 
 export const whyParticipate = {
   eyebrow: "Perché partecipare",
-  title: "Non lo diciamo noi. Lo dicono i numeri.",
-  description: "Ecco cosa succede davvero quando la tua azienda scende in campo.",
+  title: "Cosa porta alla tua azienda.",
+  description: "Quattro motivi concreti per portare i tuoi colleghi in campo.",
   benefits: [
     {
       icon: "award",
-      title: "Orgoglio",
-      description: "Orgoglio di rappresentare la tua azienda.",
+      title: "Orgoglio di squadra",
+      description: "I tuoi colleghi difendono il nome dell'azienda davanti alle altre realtà del territorio.",
     },
     {
       icon: "camera",
       title: "Copertura ufficiale",
-      description: "Copertura ufficiale di tutta la giornata: ricordi che restano.",
+      description: "Foto e video di tutta la giornata: contenuti autentici da condividere e ricordi che restano.",
     },
     {
       icon: "coffee",
       title: "Momento conviviale",
-      description: "Incluso nella giornata: momenti per conoscersi anche fuori dall'ufficio.",
+      description: "La pausa pranzo fa parte della giornata: il momento giusto per conoscersi, anche con le altre aziende.",
     },
     {
       icon: "sparkles",
-      title: "Emozioni",
-      description: "Le emozioni vere di una giornata di sport vissuta insieme ai colleghi.",
+      title: "Emozioni vere",
+      description: "Tifo, gol e parate: l'adrenalina di un torneo vissuta fianco a fianco con i colleghi.",
     },
   ] as const,
+};
+
+export const testimonialsContent = {
+  eyebrow: "Chi c'era",
+  title: "Chi ha giocato, lo racconta così.",
+  description: "Recensioni reali, raccolte in forma anonima dall'organizzazione dopo le edizioni passate.",
 };
 
 export type Testimonial = {
@@ -118,18 +143,18 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote: "È stata un'iniziativa molto bella. Mi sono divertito tantissimo e spero di ripeterla anche l'anno prossimo.",
-    author: "Dipendente partecipante 1",
+    author: "Partecipante",
     role: "Recensione anonima",
   },
   {
     quote:
       "L'unica cosa che posso dire, avendo partecipato a diverse iniziative analoghe, è che sono rimasto davvero sorpreso dalla riuscita in toto di questa giornata: pur essendo solo la prima edizione, posso solo fare i complimenti. Sono rimasto molto colpito dall'evento.",
-    author: "Dipendente partecipante 2",
-    role: "Recensione anonima",
+    author: "Partecipante",
+    role: "Recensione anonima · 1ª edizione",
   },
   {
     quote: "Impressioni positivissime: tempi celeri, organizzazione puntuale, arbitri professionali e capaci.",
-    author: "Dipendente partecipante 3",
+    author: "Partecipante",
     role: "Recensione anonima",
   },
 ];
@@ -211,30 +236,49 @@ export const galleryPhotos: GalleryPhoto[] = [
   },
 ];
 
+export const galleryContent = {
+  eyebrow: "Galleria",
+  title: "Le immagini delle edizioni passate.",
+  description: "Azioni, parate e premiazioni: sfoglia le foto di Aziende in Campo.",
+  openLabel: "Sfoglia la galleria",
+};
+
+export const participantsContent = {
+  eyebrow: "Chi è già sceso in campo",
+  title: "Hanno già giocato con noi.",
+  description: "Le aziende e le realtà del territorio che hanno preso parte alle edizioni di Aziende in Campo.",
+};
+
+export const howItWorksContent = {
+  eyebrow: "Come funziona",
+  title: "Dal form al campo in quattro passi.",
+  description: "Tu iscrivi l'azienda, noi pensiamo al resto: campo, arbitri, programma e premiazione.",
+};
+
 export const howItWorksSteps = [
   {
     number: "01",
     title: "Iscrivi la tua azienda",
     description:
-      "Compila il form di iscrizione: bastano pochi minuti per prenotare il posto della tua azienda al torneo.",
+      "Compila il form in due minuti. Ti ricontattiamo noi per confermare il posto e definire i dettagli.",
   },
   {
     number: "02",
-    title: "Forma la tua squadra",
+    title: "Forma la squadra",
     description:
-      "Coinvolgi i tuoi colleghi e costruisci la squadra di calcio a 5 che rappresenterà l'azienda: fino a 12 giocatori per squadra.",
+      "Da 5 a 12 giocatori, più 2 accompagnatori: coinvolgi i colleghi e scegli chi rappresenterà l'azienda.",
   },
   {
     number: "03",
     title: "Scendi in campo",
     description:
-      "Il giorno del torneo affronti le altre squadre aziendali del territorio, tra fase a gironi e fase finale.",
+      "Fase a gironi, poi eliminazione diretta: sfidi le altre aziende del territorio fino alla finale.",
   },
   {
     number: "04",
-    title: "Vivi l'evento",
+    title: "Vivi la giornata",
     description:
-      "Partite, premiazione e networking informale: la giornata continua ben oltre il fischio finale.",
+      "Pranzo, networking e premiazione: la festa continua ben oltre il fischio finale.",
   },
 ];
 
@@ -249,12 +293,19 @@ export const formatIdentity = [
   { icon: "calendar", label: "Giornata di evento" },
 ] as const;
 
+export const formatContent = {
+  eyebrow: "Il format",
+  title: "Una giornata, un torneo.",
+  description:
+    "Gironi, eliminazione diretta e una pausa pranzo per tutti: una giornata pensata per giocare, conoscersi e festeggiare insieme.",
+};
+
 // Solo fatti confermati o segnaposto dichiarati come tali: nessuna regola inventata.
 export const formatDetails = {
   structure: "Fase a gironi seguita da eliminazione diretta",
   lunch: "Pausa pranzo per tutte le squadre a metà giornata",
   awards: "Premiazione a fine giornata per la squadra vincitrice e i riconoscimenti individuali",
-  funFactor: "Tanto divertimento e team building tra le aziende del territorio",
+  funFactor: "Divertimento e team building tra le aziende del territorio",
 };
 
 /**
@@ -322,18 +373,31 @@ export const storyNarrative = {
 /**
  * Project history. No team-count numbers belong here — see REGOLA SUI DATI.
  */
+export const historyContent = {
+  eyebrow: "Le edizioni",
+  title: "Anno per anno.",
+  description: "Il percorso di Aziende in Campo, edizione dopo edizione.",
+};
+
+// Descrizioni costruite solo con i fatti già verificati in hallOfFame.
 export const history = [
-  { year: "2025", title: "Nasce Aziende in Campo", description: "La prima edizione, tenuta in via Ghilarza 1 a Oristano, dà il via al torneo di calcio a 5 tra le aziende del territorio." },
-  { year: "2026", title: "Seconda edizione", description: "Il torneo torna con più miglioramenti e nuovi obiettivi." },
-  { year: "2027", title: "Prossima edizione", description: "Informazioni in arrivo." }, // PLACEHOLDER
+  { year: "2025", title: "Prima edizione", description: "30 novembre 2025, MC Sport Oristano: nasce il torneo. Vince Fette di Sole, 3-0 in finale su Abbi Group." },
+  { year: "2026", title: "Seconda edizione", description: "3 maggio 2026: il torneo torna in campo. Vince Diesa S.r.l. / McDonald's, 3-0 in finale su Consorzio UNO Oristano." },
+  { year: "2027", title: "Prossima edizione", description: "Data e dettagli in arrivo: seguici su Instagram e TikTok per non perderli." }, // PLACEHOLDER
 ];
+
+export const timelineContent = {
+  eyebrow: "La giornata",
+  title: "Il programma.",
+  description: "Dal check-in alla premiazione, ecco come si svolge la giornata. Gli orari vengono comunicati alle squadre iscritte prima dell'evento.",
+};
 
 // Ordine della giornata: nessun orario, per non dover rincorrere ogni cambio di programma.
 export const timeline = [
   { title: "Check-in", description: "Accredito squadre e welcome kit." },
   { title: "Fase a gironi", description: "Le squadre si affrontano nella prima fase del torneo." },
   { title: "Pausa pranzo", description: "Pranzo e networking tra le aziende." },
-  { title: "Eliminazione diretta", description: "Semifinali tra le squadre qualificate dai gironi." },
+  { title: "Eliminazione diretta", description: "Le squadre qualificate dai gironi si giocano le semifinali." },
   { title: "Finali", description: "Finale 3°-4° posto e finalissima." },
   { title: "Premiazione", description: "Premi, foto di gruppo e chiusura della giornata." },
 ];
@@ -443,9 +507,15 @@ export const individualAwards: IndividualAward[] = [
   },
 ];
 
+export const hallOfFamePage = {
+  eyebrow: "Albo d'oro",
+  title: "Chi ha scritto la storia sul campo.",
+  description: "Le squadre vincitrici e i premi individuali di ogni edizione. Apri un'edizione per scoprire miglior giocatore e miglior portiere.",
+};
+
 export const hallOfFameCta = {
-  title: "Il tuo nome può essere il prossimo su questa bacheca.",
-  description: "Comincia da qui.",
+  title: "Il prossimo nome sulla bacheca può essere il tuo.",
+  description: "Iscrivi la tua azienda alla prossima edizione e scendi in campo per la vittoria.",
 };
 
 export type SponsorTier = "main" | "gold" | "partner";
@@ -457,6 +527,46 @@ export type Sponsor = {
 
 // Nessuno sponsor confermato al momento: la sezione pubblica mostra solo l'invito a diventare partner.
 export const sponsors: Sponsor[] = [];
+
+export const sponsorsContent = {
+  eyebrow: "Partnership",
+  title: "Diventa partner di Aziende in Campo.",
+  description:
+    "Associa il tuo marchio a un torneo che in due edizioni ha già superato le 500 presenze. Raccontaci la tua idea di partnership: la costruiamo insieme.",
+};
+
+export const registrationContent = {
+  eyebrow: "Iscrizione",
+  title: "Porta la tua azienda in campo.",
+  description: "Lascia i tuoi dati: ti ricontattiamo noi per confermare l'iscrizione e definire insieme tutti i dettagli.",
+  // Solo fatti confermati (FAQ e sede): niente promesse su prezzi o date.
+  reassurance: [
+    "Ti ricontattiamo noi per confermare il posto",
+    "Squadre da 5 a 12 giocatori, più 2 accompagnatori",
+    "MC Sport, via Ghilarza 1, Oristano",
+  ],
+  successTitle: "Richiesta inviata.",
+  successMessage:
+    "Grazie! Abbiamo ricevuto la tua richiesta di iscrizione: ti ricontattiamo a breve via email per i prossimi passi.",
+};
+
+export const faqContent = {
+  eyebrow: "Domande frequenti",
+  title: "Tutto quello che devi sapere.",
+  description: "Non trovi la risposta che cerchi? Scrivici: ti rispondiamo volentieri.",
+};
+
+export const finalCta = {
+  title: "Il prossimo calcio d'inizio aspetta la tua azienda.",
+  description: "Iscrivi la tua squadra: al resto pensiamo noi.",
+};
+
+export const contactPage = {
+  eyebrow: "Contatti",
+  title: "Parliamone.",
+  description:
+    "Informazioni sul torneo, iscrizioni o proposte di partnership: scrivici dal form o contattaci direttamente. Ti rispondiamo il prima possibile.",
+};
 
 export const faqItems = [
   {
@@ -482,7 +592,7 @@ export const faqItems = [
   {
     question: "È necessario essere sportivi?",
     answer:
-      "No. Aziende in Campo è pensato per il divertimento e il networking prima ancora che per la competizione agonistica: contano squadra e spirito di gruppo.",
+      "No. Aziende in Campo nasce per il divertimento e il networking prima ancora che per l'agonismo: contano la squadra e lo spirito di gruppo, non il livello tecnico.",
   },
   {
     question: "Dove si svolge l'evento?",
@@ -502,12 +612,12 @@ export const faqItems = [
   {
     question: "Possiamo organizzare un'edizione dedicata alla nostra azienda?",
     answer:
-      "Sì: puoi parlare direttamente con gli organizzatori per costruire un team building completamente dedicato alla tua azienda.",
+      "Sì: scrivici e costruiamo insieme una giornata di team building dedicata solo alla tua azienda.",
   },
   {
-    question: "Come posso diventare sponsor?",
+    question: "Come posso diventare partner o sponsor?",
     answer:
-      "Scrivici tramite la sezione Contatti o clicca su \"Diventa partner\": ti risponderemo per illustrarti le opportunità di partnership disponibili.",
+      "Scrivici dalla pagina Contatti scegliendo «Diventare partner / sponsor»: ti presentiamo le opportunità disponibili e costruiamo insieme la proposta più adatta al tuo marchio.",
   },
 ];
 

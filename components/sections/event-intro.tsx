@@ -41,7 +41,7 @@ export function EventIntro() {
               {eventIntro.highlights.map((highlight) => (
                 <div
                   key={highlight.label}
-                  className="rounded-2xl border border-neutral-200 px-4 py-3"
+                  className="rounded-2xl border border-neutral-200 bg-white px-4 py-3"
                 >
                   <p className="font-display text-xs uppercase tracking-widest text-neutral-500">
                     {highlight.label}

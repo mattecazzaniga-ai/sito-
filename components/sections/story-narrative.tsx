@@ -6,6 +6,7 @@ import { Camera } from "lucide-react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
 import { PlaceholderVisual } from "@/components/ui/placeholder-visual";
+import { Eyebrow } from "@/components/ui/eyebrow";
 import { storyNarrative, type StoryBeat } from "@/lib/content";
 import { EASE_OUT, viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -90,16 +91,14 @@ export function StoryNarrative() {
       <div className="container-page flex flex-col gap-20 sm:gap-28">
         <div>
           <Reveal>
-            <span className="font-display text-xs font-semibold uppercase tracking-[0.25em] text-green">
-              {storyNarrative.eyebrow}
-            </span>
+            <Eyebrow>{storyNarrative.eyebrow}</Eyebrow>
           </Reveal>
           <motion.h1
             initial={{ opacity: 0, y: 48 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={{ duration: 0.9, ease: EASE_OUT }}
-            className="mt-3 max-w-4xl text-balance font-display text-4xl font-bold uppercase leading-[0.95] text-ink sm:text-6xl lg:text-7xl"
+            className="mt-4 max-w-4xl text-balance font-display text-4xl font-bold uppercase leading-[0.95] text-ink sm:text-6xl lg:text-7xl"
           >
             {storyNarrative.title}
           </motion.h1>
