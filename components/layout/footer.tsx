@@ -9,7 +9,7 @@ export function Footer() {
       <div className="container-page grid gap-12 py-16 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:py-20">
         <div className="flex flex-col gap-4">
           <span className="font-display text-2xl font-bold uppercase tracking-tight">
-            Aziende<span className="text-red">In</span>Campo
+            Aziende<span className="text-green">In</span>Campo
           </span>
           <p className="max-w-xs text-sm leading-relaxed text-white/60">
             Evento organizzato da <span className="text-white/90">{siteConfig.organizer}</span>.
@@ -85,7 +85,7 @@ function SocialLink({
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       aria-label={label}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-red hover:bg-red hover:text-white"
+      className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white/70 transition-all duration-300 hover:-translate-y-0.5 hover:border-green hover:bg-green hover:text-white"
     >
       {children}
     </a>

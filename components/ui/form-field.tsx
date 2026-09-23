@@ -4,10 +4,12 @@ import { useId, type InputHTMLAttributes, type SelectHTMLAttributes, type Textar
 import { cn } from "@/lib/utils";
 
 const fieldBase =
-  "w-full rounded-xl border bg-white px-4 py-3 text-sm text-ink transition-colors duration-200 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-red/30";
+  "w-full rounded-xl border bg-white px-4 py-3 text-sm text-ink transition-colors duration-200 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-green/30";
 
 function fieldBorder(hasError: boolean) {
-  return hasError ? "border-red focus:border-red" : "border-neutral-300 focus:border-ink";
+  return hasError
+    ? "border-red-400 focus:border-red-500 focus:ring-red-200"
+    : "border-neutral-300 focus:border-ink";
 }
 
 type BaseProps = {
@@ -32,7 +34,7 @@ export function TextField({
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={fieldId} className="font-display text-xs font-semibold uppercase tracking-wide text-neutral-700">
-        {label} {required ? <span className="text-red">*</span> : null}
+        {label} {required ? <span className="text-red-500">*</span> : null}
       </label>
       <input
         id={fieldId}
@@ -44,7 +46,7 @@ export function TextField({
       />
       {helperText && !error ? <p className="text-xs text-neutral-500">{helperText}</p> : null}
       {error ? (
-        <p id={errorId} role="alert" className="text-xs font-medium text-red">
+        <p id={errorId} role="alert" className="text-xs font-medium text-red-600">
           {error}
         </p>
       ) : null}
@@ -67,7 +69,7 @@ export function SelectField({
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={fieldId} className="font-display text-xs font-semibold uppercase tracking-wide text-neutral-700">
-        {label} {required ? <span className="text-red">*</span> : null}
+        {label} {required ? <span className="text-red-500">*</span> : null}
       </label>
       <select
         id={fieldId}
@@ -80,7 +82,7 @@ export function SelectField({
         {children}
       </select>
       {error ? (
-        <p id={errorId} role="alert" className="text-xs font-medium text-red">
+        <p id={errorId} role="alert" className="text-xs font-medium text-red-600">
           {error}
         </p>
       ) : null}
@@ -102,7 +104,7 @@ export function TextareaField({
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={fieldId} className="font-display text-xs font-semibold uppercase tracking-wide text-neutral-700">
-        {label} {required ? <span className="text-red">*</span> : null}
+        {label} {required ? <span className="text-red-500">*</span> : null}
       </label>
       <textarea
         id={fieldId}
@@ -113,7 +115,7 @@ export function TextareaField({
         {...props}
       />
       {error ? (
-        <p id={errorId} role="alert" className="text-xs font-medium text-red">
+        <p id={errorId} role="alert" className="text-xs font-medium text-red-600">
           {error}
         </p>
       ) : null}

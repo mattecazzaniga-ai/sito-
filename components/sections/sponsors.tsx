@@ -9,7 +9,7 @@ export function Sponsors() {
       <div className="container-page">
         <Reveal>
           <div className="flex flex-col items-center gap-8 rounded-3xl border border-white/10 bg-white/5 px-8 py-14 text-center sm:px-16 sm:py-20">
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-red/10 text-red">
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-green/10 text-green">
               <Handshake className="h-6 w-6" strokeWidth={1.75} aria-hidden="true" />
             </span>
             <SectionHeading

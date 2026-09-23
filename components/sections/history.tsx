@@ -31,7 +31,7 @@ export function History() {
             aria-hidden="true"
           />
           <motion.div
-            className="absolute left-4 top-4 hidden h-[2px] origin-left bg-red sm:block"
+            className="absolute left-4 top-4 hidden h-[2px] origin-left bg-green sm:block"
             style={{ scaleX: scrollYProgress, width: "calc(100% - 2rem)" }}
             aria-hidden="true"
           />
@@ -39,10 +39,10 @@ export function History() {
           {history.map((entry, index) => (
             <Reveal as="li" key={entry.year} delay={index * 0.08} className="relative flex flex-col gap-3">
               <span
-                className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-red bg-neutral-100"
+                className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-green bg-neutral-100"
                 aria-hidden="true"
               >
-                <span className="h-2 w-2 rounded-full bg-red" />
+                <span className="h-2 w-2 rounded-full bg-green" />
               </span>
               <span className="font-display text-3xl font-bold tabular-nums text-ink sm:text-4xl">
                 {entry.year}

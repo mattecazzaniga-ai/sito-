@@ -51,7 +51,7 @@ export function Hero() {
       >
         <motion.div variants={item} className="flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-red" aria-hidden="true" />
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-green" aria-hidden="true" />
             Il torneo di calcio a 5 tra aziende
           </span>
         </motion.div>
@@ -63,7 +63,7 @@ export function Hero() {
           >
             Aziende
             <br />
-            <span className="text-red">In Campo</span>
+            <span className="text-green">In Campo</span>
           </motion.h1>
         </div>
 
@@ -92,7 +92,7 @@ export function Hero() {
         >
           {metaItems.map(({ icon: Icon, label }) => (
             <div key={label} className="flex items-center gap-2.5">
-              <Icon className="h-4 w-4 shrink-0 text-red" strokeWidth={2} aria-hidden="true" />
+              <Icon className="h-4 w-4 shrink-0 text-green" strokeWidth={2} aria-hidden="true" />
               <dd className="font-display text-sm font-medium uppercase tracking-wide text-white/85 sm:text-base">
                 {label}
               </dd>

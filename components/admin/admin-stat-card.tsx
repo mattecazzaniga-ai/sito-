@@ -11,7 +11,7 @@ export function AdminStatCard({
 }) {
   return (
     <div className="flex items-center gap-4 rounded-2xl border border-neutral-200 bg-white p-5">
-      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-red/10 text-red">
+      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-green/10 text-green">
         <Icon className="h-5 w-5" aria-hidden="true" />
       </span>
       <div>

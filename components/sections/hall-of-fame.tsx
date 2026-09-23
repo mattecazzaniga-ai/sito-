@@ -81,7 +81,7 @@ function HallOfFameCard({
           {entry.verified ? (
             <div className="flex flex-col gap-2">
               <p className="flex items-center gap-2 font-display text-lg font-semibold uppercase tracking-wide text-ink sm:text-xl">
-                <Trophy className="h-5 w-5 shrink-0 text-red" aria-hidden="true" />
+                <Trophy className="h-5 w-5 shrink-0 text-green" aria-hidden="true" />
                 {entry.winner}
               </p>
               <p className="text-sm leading-relaxed text-neutral-600">{entry.note}</p>
@@ -95,7 +95,7 @@ function HallOfFameCard({
             <span
               className={cn(
                 "mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-300 text-ink transition-transform duration-300",
-                isOpen && "rotate-180 border-red bg-red text-white"
+                isOpen && "rotate-180 border-green bg-green text-white"
               )}
               aria-hidden="true"
             >

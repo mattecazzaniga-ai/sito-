@@ -26,7 +26,7 @@ export function Values() {
             return (
               <Reveal key={pillar.label} delay={index * 0.05}>
                 <div className="flex h-full flex-col items-start gap-4 rounded-3xl border border-neutral-200 bg-white p-7">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-red/10 text-red">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-green/10 text-green">
                     <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
                   </span>
                   <p className="font-display text-xl font-semibold uppercase tracking-wide text-ink">

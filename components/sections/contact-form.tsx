@@ -42,7 +42,7 @@ export function ContactForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col items-start gap-3 rounded-3xl border border-neutral-200 bg-white p-8" role="status">
-        <CheckCircle2 className="h-8 w-8 text-red" aria-hidden="true" />
+        <CheckCircle2 className="h-8 w-8 text-green" aria-hidden="true" />
         <h3 className="font-display text-xl font-semibold uppercase text-ink">Messaggio inviato</h3>
         <p className="text-sm text-neutral-600">Ti risponderemo il prima possibile.</p>
         <Button variant="secondary" onClick={() => setStatus("idle")}>
@@ -87,7 +87,7 @@ export function ContactForm() {
         onChange={(e) => update("messaggio", e.target.value)}
       />
       {status === "error" ? (
-        <p role="alert" className="text-sm font-medium text-red">
+        <p role="alert" className="text-sm font-medium text-red-600">
           Non siamo riusciti a inviare il messaggio. Riprova o scrivici direttamente via email.
         </p>
       ) : null}

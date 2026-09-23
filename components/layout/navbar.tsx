@@ -40,7 +40,7 @@ export function Navbar({ forceSolid = false }: { forceSolid?: boolean }) {
           href="/#home"
           className="font-display text-lg font-bold uppercase tracking-tight text-white sm:text-xl"
         >
-          Aziende<span className="text-red">In</span>Campo
+          Aziende<span className="text-green">In</span>Campo
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigazione principale">

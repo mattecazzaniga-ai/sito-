@@ -121,7 +121,7 @@ export function Registration() {
               className="flex flex-col items-start gap-4 rounded-3xl border border-neutral-200 bg-white p-10"
               role="status"
             >
-              <CheckCircle2 className="h-10 w-10 text-red" aria-hidden="true" />
+              <CheckCircle2 className="h-10 w-10 text-green" aria-hidden="true" />
               <h3 className="font-display text-2xl font-semibold uppercase text-ink">Richiesta inviata</h3>
               <p className="text-neutral-600">
                 Grazie! Abbiamo ricevuto la tua richiesta di iscrizione: il nostro team ti ricontatterà
@@ -142,7 +142,7 @@ export function Registration() {
                   ref={errorSummaryRef}
                   tabIndex={-1}
                   role="alert"
-                  className="flex items-start gap-3 rounded-xl border border-red/30 bg-red/5 p-4 text-sm text-red"
+                  className="flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-600"
                 >
                   <TriangleAlert className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
                   <span>Controlla i campi evidenziati qui sotto prima di inviare il form.</span>

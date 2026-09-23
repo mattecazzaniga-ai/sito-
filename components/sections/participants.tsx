@@ -16,7 +16,7 @@ export function Participants() {
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {participants.map((name, index) => (
             <Reveal key={name} delay={index * 0.03}>
-              <div className="group flex h-full flex-col items-center justify-center gap-3 rounded-2xl border border-neutral-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-red/30 hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.2)]">
+              <div className="group flex h-full flex-col items-center justify-center gap-3 rounded-2xl border border-neutral-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-green/30 hover:shadow-[0_20px_40px_-24px_rgba(0,0,0,0.2)]">
                 <ParticipantMark name={name} />
                 <p className="font-display text-sm font-semibold uppercase tracking-wide text-ink">
                   {name}

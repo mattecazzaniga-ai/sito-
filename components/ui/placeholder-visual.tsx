@@ -6,7 +6,7 @@ type PlaceholderVisualProps = {
   icon?: LucideIcon;
   label?: string;
   className?: string;
-  tone?: "anthracite" | "red" | "paper";
+  tone?: "anthracite" | "green" | "paper";
 };
 
 /**
@@ -22,7 +22,7 @@ export function PlaceholderVisual({
 }: PlaceholderVisualProps) {
   const toneClasses = {
     anthracite: "bg-anthracite text-white",
-    red: "bg-gradient-to-br from-red to-red-dark text-white",
+    green: "bg-gradient-to-br from-green to-green-dark text-white",
     paper: "bg-neutral-100 text-ink",
   } as const;
 

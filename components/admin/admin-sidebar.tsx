@@ -15,7 +15,7 @@ export function AdminSidebar() {
         <p className="font-display text-lg font-bold uppercase leading-tight text-white">
           {siteConfig.name}
         </p>
-        <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-red">Admin</p>
+        <p className="font-display text-xs font-semibold uppercase tracking-[0.3em] text-green">Admin</p>
       </div>
 
       <nav className="flex flex-1 flex-col gap-1" aria-label="Navigazione amministrazione">
@@ -28,7 +28,7 @@ export function AdminSidebar() {
               aria-current={isActive ? "page" : undefined}
               className={cn(
                 "rounded-xl px-3 py-2.5 font-display text-sm font-medium uppercase tracking-wide transition-colors",
-                isActive ? "bg-red text-white" : "text-white/60 hover:bg-white/5 hover:text-white"
+                isActive ? "bg-green text-white" : "text-white/60 hover:bg-white/5 hover:text-white"
               )}
             >
               {item.label}

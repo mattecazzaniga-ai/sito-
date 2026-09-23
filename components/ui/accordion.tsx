@@ -47,7 +47,7 @@ function AccordionItem({
           onClick={onToggle}
           aria-expanded={isOpen}
           aria-controls={panelId}
-          className="flex w-full cursor-pointer items-center justify-between gap-6 py-6 text-left transition-colors hover:text-red"
+          className="flex w-full cursor-pointer items-center justify-between gap-6 py-6 text-left transition-colors hover:text-green"
         >
           <span className="font-display text-lg font-medium uppercase tracking-wide text-ink sm:text-xl">
             {item.question}
@@ -55,7 +55,7 @@ function AccordionItem({
           <span
             className={cn(
               "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-neutral-300 text-ink transition-all duration-300",
-              isOpen && "rotate-45 border-red bg-red text-white"
+              isOpen && "rotate-45 border-green bg-green text-white"
             )}
             aria-hidden="true"
           >

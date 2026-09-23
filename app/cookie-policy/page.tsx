@@ -42,7 +42,7 @@ export default function CookiePolicyPage() {
               <p className="mt-2 leading-relaxed">
                 È possibile gestire le preferenze sui cookie direttamente dalle impostazioni del proprio
                 browser. Per domande scrivere a{" "}
-                <a href={`mailto:${contact.email}`} className="text-red underline underline-offset-2">
+                <a href={`mailto:${contact.email}`} className="text-green underline underline-offset-2">
                   {contact.email}
                 </a>
                 .
