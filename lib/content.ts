@@ -440,9 +440,19 @@ export const faqItems = [
       "Qualsiasi azienda, di qualsiasi dimensione e settore: grandi aziende, bar, barbershop, negozi, studi professionali. Non serve un settore specifico, solo la voglia di scendere in campo.",
   },
   {
+    question: "Chi può giocare nella squadra?",
+    answer:
+      "La squadra può essere composta dai dipendenti dell'azienda. In caso di necessità sono ammessi fino a tre collaboratori strettamente legati alla realtà aziendale, come ex dipendenti, partner o fornitori: di questi tre, al massimo uno può essere un parente.",
+  },
+  {
     question: "Quante persone servono per formare una squadra?",
     answer:
       "Ogni squadra è formata da un minimo di 5 a un massimo di 12 giocatori, più 2 accompagnatori/allenatori.",
+  },
+  {
+    question: "Possono partecipare anche i colleghi che non giocano?",
+    answer:
+      "Sì: l'evento è pensato anche per colleghi, accompagnatori e famiglie, che possono vivere la giornata insieme alla squadra, tifando e condividendo il team building e il networking.",
   },
   {
     question: "È necessario essere sportivi?",
@@ -455,14 +465,19 @@ export const faqItems = [
       "Il torneo si svolge in via Ghilarza 1 a Oristano, presso il centro sportivo MC Sport.",
   },
   {
-    question: "Come vengono organizzate le partite?",
+    question: "L'evento si svolge anche in caso di maltempo?",
     answer:
-      "Il torneo si sviluppa con una fase a gironi seguita da semifinali e finale, come nelle edizioni già disputate.",
+      "In caso di maltempo verrà individuata un'altra data, comunicata a tutte le squadre iscritte.",
   },
   {
     question: "Ci sono premi?",
     answer:
       "Sì: alla squadra vincitrice e ai migliori giocatori vengono assegnati riconoscimenti a fine giornata, come nell'Albo d'Oro delle edizioni passate.",
+  },
+  {
+    question: "Possiamo organizzare un'edizione dedicata alla nostra azienda?",
+    answer:
+      "Sì: puoi parlare direttamente con gli organizzatori per costruire un team building completamente dedicato alla tua azienda.",
   },
   {
     question: "Come posso diventare sponsor?",

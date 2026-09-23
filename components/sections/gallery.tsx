@@ -47,39 +47,40 @@ export function Gallery() {
         />
 
         {galleryPhotos.length === 0 ? (
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {[0, 1, 2, 3].map((index) => (
-              <Reveal key={index} delay={index * 0.04}>
-                <div className="flex aspect-square w-full flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-neutral-300 bg-neutral-50 text-neutral-300">
-                  <ImageIcon className="h-7 w-7" strokeWidth={1.25} aria-hidden="true" />
-                  <span className="font-display text-[11px] font-semibold uppercase tracking-widest">
-                    In arrivo
-                  </span>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <div className="flex aspect-[21/9] w-full flex-col items-center justify-center gap-2 rounded-3xl border border-dashed border-neutral-300 bg-neutral-50 text-neutral-300">
+              <ImageIcon className="h-8 w-8" strokeWidth={1.25} aria-hidden="true" />
+              <span className="font-display text-xs font-semibold uppercase tracking-widest">
+                Foto in arrivo
+              </span>
+            </div>
+          </Reveal>
         ) : (
-          <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {galleryPhotos.map((photo, index) => (
-              <Reveal key={photo.src} delay={index * 0.04}>
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(index)}
-                  className="group relative aspect-square w-full overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green"
-                  aria-label={`Apri la foto: ${photo.alt}`}
-                >
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </button>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal>
+            <button
+              type="button"
+              onClick={() => setOpenIndex(0)}
+              className="group relative aspect-[4/3] w-full overflow-hidden rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green sm:aspect-[21/9]"
+              aria-label={`Sfoglia tutte le foto della libreria (${galleryPhotos.length})`}
+            >
+              <Image
+                src={galleryPhotos[0].src}
+                alt={galleryPhotos[0].alt}
+                fill
+                sizes="100vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/15 to-transparent" />
+              <div className="absolute bottom-6 left-6 flex items-center gap-3 sm:bottom-8 sm:left-8">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-ink transition-transform duration-300 ease-out group-hover:scale-110">
+                  <ImageIcon className="h-5 w-5" strokeWidth={1.75} aria-hidden="true" />
+                </span>
+                <span className="font-display text-sm font-semibold uppercase tracking-wide text-white sm:text-base">
+                  Sfoglia tutte le foto ({galleryPhotos.length})
+                </span>
+              </div>
+            </button>
+          </Reveal>
         )}
       </div>
 
