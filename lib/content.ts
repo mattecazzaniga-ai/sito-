@@ -33,12 +33,13 @@ export const navLinks = [
   { label: "Perché partecipare", href: "/#perche-partecipare" },
   { label: "Albo d'oro", href: "/albo-doro" },
   { label: "Iscrizioni", href: "/#iscrizione" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export const eventInfo = {
   sport: "Calcio a 5",
   dateLabel: "Prossima edizione", // PLACEHOLDER — data della 3ª edizione non ancora annunciata
-  location: "Oristano", // sede storica: campo MC Sport — da confermare per la prossima edizione
+  location: "Via Ghilarza 1, Oristano", // sede: MC Sport Oristano
 };
 
 export const eventIntro = {
@@ -122,8 +123,9 @@ export type GalleryPhoto = {
 };
 
 /**
- * Libreria fotografica del torneo. Foto dell'organizzatore, edizione dopo
- * edizione. Non riutilizzare qui immagini già impiegate altrove nel sito.
+ * Libreria fotografica del torneo: qui raccogliamo ogni foto disponibile
+ * (azione, premiazioni, momenti di squadra), incluse quelle già usate altrove
+ * nel sito — questa è la raccolta completa, i duplicati sono voluti.
  */
 export const galleryPhotos: GalleryPhoto[] = [
   {
@@ -142,6 +144,54 @@ export const galleryPhotos: GalleryPhoto[] = [
     src: "/images/azione-parata-diesa.jpg",
     alt: "Il portiere si tuffa in presa bassa mentre il pallone vola sopra la traversa",
   },
+  {
+    src: "/images/hero-calcio-a-5.jpg",
+    alt: "Giocatori di calcio a 5 di Aziende in Campo si stringono la mano a fine partita",
+  },
+  {
+    src: "/images/albo-doro-2025-fette-di-sole.jpg",
+    alt: "Squadra vincitrice Fette di Sole — edizione 2025 di Aziende in Campo",
+  },
+  {
+    src: "/images/albo-doro-2026-diesa-mcdonalds.jpg",
+    alt: "Squadra vincitrice Diesa S.r.l. / McDonald's — edizione 2026 di Aziende in Campo",
+  },
+  {
+    src: "/images/premio-2025-miglior-giocatore-sireus.jpg",
+    alt: "Luca Sireus (Abbi Group) — Miglior giocatore, edizione 2025",
+  },
+  {
+    src: "/images/premio-2025-miglior-portiere-zucca.jpg",
+    alt: "Ivan Zucca (Fette di Sole) — Miglior portiere, edizione 2025",
+  },
+  {
+    src: "/images/premio-2026-miglior-giocatore-delussu.jpg",
+    alt: "Andrea Delussu (Diesa S.r.l. / McDonald's) — Miglior giocatore, edizione 2026",
+  },
+  {
+    src: "/images/premio-2026-miglior-portiere-cossu.jpg",
+    alt: "Gabriele Cossu (Consorzio UNO) — Miglior portiere, edizione 2026",
+  },
+  {
+    src: "/images/azione-dribbling-uno-mcdonalds.jpg",
+    alt: "Un giocatore Diesa/McDonald's dribbla un avversario del Consorzio UNO",
+  },
+  {
+    src: "/images/azione-tiro-mcdonalds.jpg",
+    alt: "Un giocatore Diesa/McDonald's calcia verso la porta",
+  },
+  {
+    src: "/images/azione-portiere-ondulor.jpg",
+    alt: "Portiere in azione durante una partita di Aziende in Campo",
+  },
+  {
+    src: "/images/azione-contrasto-palla.jpg",
+    alt: "Due giocatori si contendono il pallone durante una partita di Aziende in Campo",
+  },
+  {
+    src: "/images/azione-corsa-mcdonalds.jpg",
+    alt: "Giocatore in corsa durante una partita di Aziende in Campo",
+  },
 ];
 
 export const howItWorksSteps = [
@@ -155,7 +205,7 @@ export const howItWorksSteps = [
     number: "02",
     title: "Forma la tua squadra",
     description:
-      "Coinvolgi i tuoi colleghi e costruisci la squadra di calcio a 5 che rappresenterà l'azienda.",
+      "Coinvolgi i tuoi colleghi e costruisci la squadra di calcio a 5 che rappresenterà l'azienda: fino a 12 giocatori per squadra.",
   },
   {
     number: "03",
@@ -256,8 +306,8 @@ export const storyNarrative = {
  * Project history. No team-count numbers belong here — see REGOLA SUI DATI.
  */
 export const history = [
-  { year: "2025", title: "Nasce Aziende in Campo", description: "Prima edizione del torneo di calcio a 5 tra aziende del territorio di Oristano." },
-  { year: "2026", title: "Seconda edizione", description: "Il torneo torna con la seconda edizione." },
+  { year: "2025", title: "Nasce Aziende in Campo", description: "La prima edizione, tenuta in via Ghilarza 1 a Oristano, dà il via al torneo di calcio a 5 tra le aziende del territorio." },
+  { year: "2026", title: "Seconda edizione", description: "Il torneo torna con più miglioramenti e nuovi obiettivi." },
   { year: "2027", title: "Prossima edizione", description: "Informazioni in arrivo." }, // PLACEHOLDER
 ];
 
@@ -387,12 +437,12 @@ export const faqItems = [
   {
     question: "Chi può partecipare?",
     answer:
-      "Qualsiasi azienda o realtà del territorio di Oristano può iscrivere una squadra di calcio a 5: non è richiesto un settore specifico, solo la voglia di scendere in campo.",
+      "Qualsiasi azienda, di qualsiasi dimensione e settore: grandi aziende, bar, barbershop, negozi, studi professionali. Non serve un settore specifico, solo la voglia di scendere in campo.",
   },
   {
     question: "Quante persone servono per formare una squadra?",
     answer:
-      "Il numero minimo e massimo di giocatori per squadra viene indicato nel form di iscrizione ed è pensato per permettere rotazioni durante la giornata.",
+      "Ogni squadra è formata da un minimo di 5 a un massimo di 12 giocatori, più 2 accompagnatori/allenatori.",
   },
   {
     question: "È necessario essere sportivi?",
@@ -400,19 +450,9 @@ export const faqItems = [
       "No. Aziende in Campo è pensato per il divertimento e il networking prima ancora che per la competizione agonistica: contano squadra e spirito di gruppo.",
   },
   {
-    question: "Quanto costa partecipare?",
-    answer:
-      "Il costo di iscrizione è in fase di definizione. Verrà comunicato a tutte le aziende interessate prima della conferma finale.", // PLACEHOLDER
-  },
-  {
-    question: "Cosa comprende l'iscrizione?",
-    answer:
-      "L'iscrizione comprende la partecipazione al torneo di calcio a 5 e l'accesso alle attività della giornata. I dettagli definitivi verranno confermati via email.", // PLACEHOLDER
-  },
-  {
     question: "Dove si svolge l'evento?",
     answer:
-      "Il torneo si svolge a Oristano. La location della prossima edizione è in fase di conferma e verrà comunicata a tutte le squadre iscritte.", // PLACEHOLDER sul campo esatto
+      "Il torneo si svolge in via Ghilarza 1 a Oristano, presso il centro sportivo MC Sport.",
   },
   {
     question: "Come vengono organizzate le partite?",
@@ -427,7 +467,7 @@ export const faqItems = [
   {
     question: "Come posso diventare sponsor?",
     answer:
-      "Compila il form nella sezione Sponsor oppure scrivici direttamente: ti ricontatteremo per illustrarti i pacchetti di partnership disponibili.",
+      "Scrivici tramite la sezione Contatti o clicca su \"Diventa partner\": ti risponderemo per illustrarti le opportunità di partnership disponibili.",
   },
 ];
 

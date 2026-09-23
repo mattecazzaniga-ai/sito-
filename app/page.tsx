@@ -29,8 +29,8 @@ export default function Home() {
       <main id="main-content" className="flex-1">
         <Hero />
         <EventIntro />
-        <Stats />
         <Values />
+        <Stats />
         <WhyParticipate />
         <Testimonials />
         <Participants />

@@ -15,7 +15,6 @@ type FormState = {
   referente: string;
   email: string;
   telefono: string;
-  partecipanti: string;
   note: string;
 };
 
@@ -24,7 +23,6 @@ const initialState: FormState = {
   referente: "",
   email: "",
   telefono: "",
-  partecipanti: "",
   note: "",
 };
 
@@ -51,7 +49,6 @@ export function Registration() {
       next.email = "L'indirizzo email non sembra valido.";
     }
     if (!current.telefono.trim()) next.telefono = "Inserisci un numero di telefono.";
-    if (!current.partecipanti.trim()) next.partecipanti = "Indica il numero di partecipanti.";
     return next;
   }
 
@@ -97,16 +94,16 @@ export function Registration() {
           <SectionHeading
             eyebrow="Iscrizione"
             title="Porta la tua azienda in campo."
-            description="Compila il form: ti ricontatteremo per confermare i dettagli e completare l'iscrizione della tua azienda."
+            description="Contattaci o clicca su &laquo;Iscrivi la tua azienda&raquo;: ti ricontatteremo per definire insieme i dettagli."
           />
           <Reveal delay={0.1} className="hidden lg:block">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[3/4]">
               <Image
                 src="/images/azione-corsa-mcdonalds.jpg"
                 alt="Giocatore in corsa durante una partita di Aziende in Campo"
                 fill
                 sizes="35vw"
-                className="object-cover object-top"
+                className="object-cover"
               />
             </div>
           </Reveal>
@@ -192,19 +189,6 @@ export function Registration() {
                   error={errors.telefono}
                 />
               </div>
-
-              <TextField
-                label="Numero partecipanti"
-                type="number"
-                min={1}
-                required
-                inputMode="numeric"
-                helperText="Quante persone comporranno la tua squadra di calcio a 5."
-                value={form.partecipanti}
-                onChange={(e) => update("partecipanti", e.target.value)}
-                onBlur={() => handleBlur("partecipanti")}
-                error={errors.partecipanti}
-              />
 
               <TextareaField
                 label="Note"

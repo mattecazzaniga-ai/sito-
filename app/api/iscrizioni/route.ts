@@ -5,7 +5,6 @@ export type IscrizionePayload = {
   referente: string;
   email: string;
   telefono: string;
-  partecipanti: string;
   note?: string;
 };
 
@@ -31,7 +30,6 @@ export async function POST(request: Request) {
     "referente",
     "email",
     "telefono",
-    "partecipanti",
   ];
 
   const missing = requiredFields.filter((field) => !payload[field]?.toString().trim());
