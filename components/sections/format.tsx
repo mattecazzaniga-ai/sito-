@@ -1,4 +1,4 @@
-import { Calendar, Volleyball, Trophy, UsersRound, Whistle, Coffee, Award } from "lucide-react";
+import { Calendar, Volleyball, Trophy, UsersRound, Whistle, Coffee, Award, PartyPopper } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { formatDetails, formatIdentity } from "@/lib/content";
@@ -14,6 +14,7 @@ const rows = [
   { icon: Whistle, label: "Struttura del torneo", value: formatDetails.structure },
   { icon: Coffee, label: "Pausa pranzo", value: formatDetails.lunch },
   { icon: Award, label: "Premiazione", value: formatDetails.awards },
+  { icon: PartyPopper, label: "Divertimento", value: formatDetails.funFactor },
 ];
 
 export function Format() {

@@ -2,8 +2,10 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import { Camera } from "lucide-react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { Reveal } from "@/components/ui/reveal";
+import { PlaceholderVisual } from "@/components/ui/placeholder-visual";
 import { storyNarrative, type StoryBeat } from "@/lib/content";
 import { EASE_OUT, viewportOnce } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -50,7 +52,7 @@ function ParallaxPhoto({ src, alt }: { src: string; alt: string }) {
 }
 
 function ParagraphBeat({ beat, index }: { beat: Extract<StoryBeat, { type: "paragraph" }>; index: number }) {
-  if (!beat.photo) {
+  if (!beat.photo && !beat.photoPending) {
     return (
       <Reveal>
         <p className="mx-auto max-w-2xl text-balance text-lg leading-relaxed text-neutral-700 sm:text-xl">
@@ -65,7 +67,13 @@ function ParagraphBeat({ beat, index }: { beat: Extract<StoryBeat, { type: "para
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
       <Reveal className={cn(imageFirst ? "lg:order-1" : "lg:order-2")}>
-        <ParallaxPhoto src={beat.photo} alt="Momento di una giornata di Aziende in Campo" />
+        {beat.photo ? (
+          <ParallaxPhoto src={beat.photo} alt="Momento di una giornata di Aziende in Campo" />
+        ) : (
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl sm:aspect-[3/4]">
+            <PlaceholderVisual icon={Camera} label="Foto in arrivo" tone="anthracite" className="h-full w-full" />
+          </div>
+        )}
       </Reveal>
       <Reveal delay={0.08} className={cn(imageFirst ? "lg:order-2" : "lg:order-1")}>
         <p className="text-balance text-lg leading-relaxed text-neutral-700 sm:text-xl">

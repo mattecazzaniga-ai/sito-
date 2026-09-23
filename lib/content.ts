@@ -45,13 +45,13 @@ export const eventIntro = {
   eyebrow: "Il concept",
   title: "Il calcio a 5, vissuto insieme.",
   paragraphs: [
-    "Aziende in Campo è un torneo di calcio a 5 dedicato alle aziende e alle realtà del territorio di Oristano.",
-    "L'obiettivo è creare una giornata in cui colleghi e aziende possano vivere la competizione sul campo e condividere un'esperienza al di fuori del normale ambiente lavorativo.",
+    "Aziende in Campo è il torneo di calcio a 5 che porta le aziende del territorio di Oristano fuori dai loro uffici: in campo, il gioco di squadra diventa il modo più naturale per fare vero team building.",
+    "Ogni partita è anche un'occasione di networking autentico: colleghi che si conoscono meglio, aziende che si incontrano senza il filtro di una riunione, relazioni che nascono mentre si gioca insieme.",
   ],
   highlights: [
     { label: "Sport", value: "Calcio a 5" },
-    { label: "Format", value: "Torneo" },
-    { label: "Territorio", value: "Oristano" },
+    { label: "Team building", value: "Fuori dall'ufficio" },
+    { label: "Networking", value: "Tra aziende" },
   ],
 };
 
@@ -171,6 +171,7 @@ export const formatDetails = {
   structure: "Fase a gironi seguita da eliminazione diretta",
   lunch: "Pausa pranzo per tutte le squadre a metà giornata",
   awards: "Premiazione a fine giornata per la squadra vincitrice e i riconoscimenti individuali",
+  funFactor: "Tanto divertimento e team building tra le aziende del territorio",
 };
 
 /**
@@ -180,7 +181,7 @@ export const formatDetails = {
  */
 export type StoryBeat =
   | { type: "lead"; text: string }
-  | { type: "paragraph"; text: string; highlight?: string; photo?: string }
+  | { type: "paragraph"; text: string; highlight?: string; photo?: string; photoPending?: boolean }
   | { type: "pullquote"; lines: string[] };
 
 export const storyNarrative = {
@@ -204,6 +205,7 @@ export const storyNarrative = {
       type: "paragraph",
       text: "Non è un'idea nata dal nulla. Un torneo di calcio a 5 tra aziende, in questo territorio, esisteva già: si era fermato, ma non è mai stato dimenticato. Aziende in Campo nasce anche per questo, per riportarlo in campo e trasformarlo in un appuntamento che il territorio possa aspettare ogni anno.",
       highlight: "riportarlo in campo",
+      photoPending: true, // foto del vecchio torneo in arrivo dall'organizzatore
     },
     {
       type: "paragraph",
@@ -298,9 +300,9 @@ export const hallOfFame: HallOfFameEntry[] = [
     date: "30 novembre 2025",
     winner: "Fette di Sole",
     opponent: "Abbi Group",
-    // score: PLACEHOLDER — punteggio esatto della finale da confermare
-    note: "Il 30 novembre 2025 Fette di Sole ha vinto la finale della prima edizione contro Abbi Group.",
-    verified: true, // fonte: organizzatore + ornews.it — verificare prima della pubblicazione
+    score: "3-0",
+    note: "Il 30 novembre 2025 Fette di Sole ha vinto la finale della prima edizione 3-0 contro Abbi Group.",
+    verified: true, // fonte: organizzatore — confermato dall'organizzatore
     photo: "/images/albo-doro-2025-fette-di-sole.jpg",
   },
   {
