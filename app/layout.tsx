@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/icon.svg",
+    icon: "/icon.png",
   },
 };
 

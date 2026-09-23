@@ -36,7 +36,7 @@ export function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <Reveal key={testimonial.author} delay={index * 0.05}>
                 <div className="flex h-full flex-col gap-4 rounded-3xl border border-neutral-200 bg-white p-7">
-                  <Quote className="h-6 w-6 text-red" aria-hidden="true" />
+                  <Quote className="h-6 w-6 text-green" aria-hidden="true" />
                   <p className="text-sm leading-relaxed text-neutral-700">&ldquo;{testimonial.quote}&rdquo;</p>
                   <div className="mt-auto">
                     <p className="font-display text-sm font-semibold text-ink">{testimonial.author}</p>

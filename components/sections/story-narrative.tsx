@@ -24,7 +24,7 @@ function HighlightWord({ text, word }: { text: string; word?: string }) {
       {before}
       <motion.span
         initial={{ color: "var(--color-neutral-400, #a1a1aa)" }}
-        whileInView={{ color: "var(--color-red)" }}
+        whileInView={{ color: "var(--color-green)" }}
         viewport={viewportOnce}
         transition={{ duration: 0.6, ease: EASE_OUT }}
         className="font-semibold"
@@ -90,7 +90,7 @@ export function StoryNarrative() {
       <div className="container-page flex flex-col gap-20 sm:gap-28">
         <div>
           <Reveal>
-            <span className="font-display text-xs font-semibold uppercase tracking-[0.25em] text-red">
+            <span className="font-display text-xs font-semibold uppercase tracking-[0.25em] text-green">
               {storyNarrative.eyebrow}
             </span>
           </Reveal>
@@ -131,7 +131,7 @@ export function StoryNarrative() {
                     key={line}
                     className={cn(
                       "font-display text-3xl font-bold uppercase leading-tight sm:text-5xl lg:text-6xl",
-                      lineIndex === beat.lines.length - 1 ? "text-red" : "text-ink"
+                      lineIndex === beat.lines.length - 1 ? "text-green" : "text-ink"
                     )}
                   >
                     {line}

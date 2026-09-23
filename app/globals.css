@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand */
-  --color-red: #e0132b;
-  --color-red-dark: #a80f21;
-  --color-red-light: #ff4757;
+  /* Brand — dal logo Aziende in Campo (verde e blu navy) */
+  --color-green: #147333;
+  --color-green-dark: #0f5626;
+  --color-green-light: #22a855;
+
+  --color-navy: #273460;
+  --color-navy-dark: #1b2547;
+  --color-navy-light: #3c4d85;
 
   --color-ink: #0a0a0b;
   --color-anthracite: #17171a;
@@ -36,9 +40,12 @@
 }
 
 @theme inline {
-  --color-red: var(--color-red);
-  --color-red-dark: var(--color-red-dark);
-  --color-red-light: var(--color-red-light);
+  --color-green: var(--color-green);
+  --color-green-dark: var(--color-green-dark);
+  --color-green-light: var(--color-green-light);
+  --color-navy: var(--color-navy);
+  --color-navy-dark: var(--color-navy-dark);
+  --color-navy-light: var(--color-navy-light);
   --color-ink: var(--color-ink);
   --color-anthracite: var(--color-anthracite);
   --color-anthracite-2: var(--color-anthracite-2);
@@ -87,13 +94,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background: var(--color-red);
+  background: var(--color-green);
   color: var(--color-white);
 }
 
 /* Focus visibility kept consistent across custom interactive elements */
 :focus-visible {
-  outline: 2px solid var(--color-red);
+  outline: 2px solid var(--color-green);
   outline-offset: 3px;
   border-radius: 2px;
 }

@@ -13,7 +13,7 @@ type MarqueeProps = {
 
 /**
  * CSS-driven infinite marquee (no JS animation loop) so it stays smooth on
- * mobile. Pauses automatically when prefers-reduced-motion is set.
+ * mobile. Pauses automatically when prefers-greenuced-motion is set.
  */
 export function Marquee({ children, className, durationSeconds = 32, reverse = false }: MarqueeProps) {
   const prefersReducedMotion = useReducedMotion();

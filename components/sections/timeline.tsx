@@ -25,7 +25,7 @@ export function Timeline() {
         <ol ref={containerRef} className="relative mt-16 flex flex-col gap-12 pl-8 sm:pl-10">
           <div className="absolute left-[7px] top-2 bottom-2 w-[2px] bg-neutral-200 sm:left-[11px]" aria-hidden="true" />
           <motion.div
-            className="absolute left-[7px] top-2 w-[2px] origin-top bg-red sm:left-[11px]"
+            className="absolute left-[7px] top-2 w-[2px] origin-top bg-green sm:left-[11px]"
             style={{ scaleY: scrollYProgress, height: "calc(100% - 1rem)" }}
             aria-hidden="true"
           />
@@ -33,13 +33,13 @@ export function Timeline() {
           {timeline.map((step, index) => (
             <Reveal as="li" key={step.title} delay={index * 0.03} className="relative">
               <span
-                className="absolute -left-8 top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-red bg-white sm:-left-10 sm:h-5 sm:w-5"
+                className="absolute -left-8 top-1 flex h-4 w-4 items-center justify-center rounded-full border-2 border-green bg-white sm:-left-10 sm:h-5 sm:w-5"
                 aria-hidden="true"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-red" />
+                <span className="h-1.5 w-1.5 rounded-full bg-green" />
               </span>
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-6">
-                <span className="font-display text-2xl font-bold tabular-nums text-red sm:w-16 sm:shrink-0 sm:text-3xl">
+                <span className="font-display text-2xl font-bold tabular-nums text-green sm:w-16 sm:shrink-0 sm:text-3xl">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <div>

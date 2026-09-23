@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="font-display text-xl font-semibold uppercase text-ink">Titolare del trattamento</h2>
               <p className="mt-2 leading-relaxed">
                 {siteConfig.organizer} — contattabile all&rsquo;indirizzo{" "}
-                <a href={`mailto:${contact.email}`} className="text-red underline underline-offset-2">
+                <a href={`mailto:${contact.email}`} className="text-green underline underline-offset-2">
                   {contact.email}
                 </a>
                 . [PLACEHOLDER: ragione sociale completa, sede legale, P.IVA]
@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
               <p className="mt-2 leading-relaxed">
                 In qualsiasi momento è possibile richiedere accesso, rettifica o cancellazione dei propri
                 dati scrivendo a{" "}
-                <a href={`mailto:${contact.email}`} className="text-red underline underline-offset-2">
+                <a href={`mailto:${contact.email}`} className="text-green underline underline-offset-2">
                   {contact.email}
                 </a>
                 . [PLACEHOLDER: riferimenti completi al GDPR]

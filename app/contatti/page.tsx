@@ -16,7 +16,7 @@ export default function ContattiPage() {
       <main className="flex-1 bg-neutral-100 pt-36 pb-24" id="partner">
         <div className="container-page grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-16">
           <div className="flex flex-col gap-6">
-            <span className="font-display text-xs font-semibold uppercase tracking-[0.25em] text-red">
+            <span className="font-display text-xs font-semibold uppercase tracking-[0.25em] text-green">
               Contatti
             </span>
             <h1 className="font-display text-4xl font-bold uppercase leading-[0.95] text-ink sm:text-5xl">
@@ -27,10 +27,10 @@ export default function ContattiPage() {
               scrivici tramite il form oppure direttamente ai contatti qui sotto.
             </p>
             <div className="flex flex-col gap-1 pt-4 text-sm">
-              <a href={`mailto:${contact.email}`} className="font-medium text-ink hover:text-red">
+              <a href={`mailto:${contact.email}`} className="font-medium text-ink hover:text-green">
                 {contact.email}
               </a>
-              <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="font-medium text-ink hover:text-red">
+              <a href={`tel:${contact.phone.replace(/\s/g, "")}`} className="font-medium text-ink hover:text-green">
                 {contact.phone}
               </a>
             </div>
