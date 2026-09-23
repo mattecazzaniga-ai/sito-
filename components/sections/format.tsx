@@ -1,4 +1,4 @@
-import { Calendar, Volleyball, Trophy, UsersRound, Whistle, Timer, Swords, Award } from "lucide-react";
+import { Calendar, Volleyball, Trophy, UsersRound, Whistle, Coffee, Award } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { formatDetails, formatIdentity } from "@/lib/content";
@@ -12,8 +12,7 @@ const identityIcons = {
 
 const rows = [
   { icon: Whistle, label: "Struttura del torneo", value: formatDetails.structure },
-  { icon: Timer, label: "Durata partite", value: formatDetails.matchDuration },
-  { icon: Swords, label: "Regolamento", value: formatDetails.rules },
+  { icon: Coffee, label: "Pausa pranzo", value: formatDetails.lunch },
   { icon: Award, label: "Premiazione", value: formatDetails.awards },
 ];
 
@@ -24,7 +23,7 @@ export function Format() {
         <SectionHeading
           eyebrow="Il format"
           title="Le regole del gioco"
-          description="La struttura del torneo di calcio a 5. I dettagli non ancora ufficiali verranno confermati a ridosso della prossima edizione."
+          description="Gironi, eliminazione diretta e una pausa pranzo per tutti: la struttura di una giornata pensata per giocare, non solo per vincere."
           tone="light"
         />
 

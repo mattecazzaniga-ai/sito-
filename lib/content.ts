@@ -21,10 +21,10 @@ export const siteConfig = {
 };
 
 export const contact = {
-  email: "info@aziendeincampo.it", // PLACEHOLDER
-  phone: "+39 02 1234 5678", // PLACEHOLDER
-  instagram: "https://instagram.com/aziendeincampo", // PLACEHOLDER
-  linkedin: "https://linkedin.com/company/aziendeincampo", // PLACEHOLDER
+  email: "orisoundevent@gmail.com",
+  phone: "+39 333 579 3417",
+  instagram: "https://instagram.com/aziendeincampo",
+  tiktok: "https://www.tiktok.com/@aziendeincampo",
 };
 
 export const navLinks = [
@@ -77,12 +77,6 @@ export const valuesContent = {
     { icon: "heart", label: "Appartenenza" },
     { icon: "camera", label: "Ricordi" },
   ] as const,
-  solution: {
-    title: "La soluzione è questa giornata.",
-    description:
-      "Una giornata che crea una vera squadra: non servono campioni, serve solo la voglia di partecipare.",
-    highlights: ["Tutti possono giocare", "Fair play", "Divertimento"],
-  },
 };
 
 export const whyParticipate = {
@@ -121,6 +115,18 @@ export type Testimonial = {
 
 // PLACEHOLDER — recensioni reali in arrivo dall'organizzatore
 export const testimonials: Testimonial[] = [];
+
+export type GalleryPhoto = {
+  src: string;
+  alt: string;
+};
+
+/**
+ * Libreria fotografica del torneo. Vuota per ora: le foto arriveranno
+ * dall'organizzatore edizione dopo edizione. Non riutilizzare qui immagini
+ * già impiegate altrove nel sito.
+ */
+export const galleryPhotos: GalleryPhoto[] = [];
 
 export const howItWorksSteps = [
   {
@@ -162,9 +168,8 @@ export const formatIdentity = [
 
 // Solo fatti confermati o segnaposto dichiarati come tali: nessuna regola inventata.
 export const formatDetails = {
-  structure: "Fase a gironi seguita da semifinali e finale",
-  rules: "Regolamento ufficiale in fase di pubblicazione", // PLACEHOLDER
-  matchDuration: "Durata partite da confermare", // PLACEHOLDER
+  structure: "Fase a gironi seguita da eliminazione diretta",
+  lunch: "Pausa pranzo per tutte le squadre a metà giornata",
   awards: "Premiazione a fine giornata per la squadra vincitrice e i riconoscimenti individuali",
 };
 
@@ -190,7 +195,6 @@ export const storyNarrative = {
       type: "paragraph",
       text: "Da questa osservazione nasce Aziende in Campo: dall'idea di un ragazzo con la passione per lo sport e per il proprio territorio, che ha immaginato un evento capace di portare le aziende fuori dall'ufficio e dentro una giornata diversa, fatta di calcio a 5, relazioni e divertimento.",
       highlight: "passione",
-      photo: "/images/hero-calcio-a-5.jpg",
     },
     {
       type: "pullquote",
@@ -198,9 +202,13 @@ export const storyNarrative = {
     },
     {
       type: "paragraph",
+      text: "Non è un'idea nata dal nulla. Un torneo di calcio a 5 tra aziende, in questo territorio, esisteva già: si era fermato, ma non è mai stato dimenticato. Aziende in Campo nasce anche per questo, per riportarlo in campo e trasformarlo in un appuntamento che il territorio possa aspettare ogni anno.",
+      highlight: "riportarlo in campo",
+    },
+    {
+      type: "paragraph",
       text: "Il calcio a 5 diventa così il punto d'incontro: un linguaggio semplice e universale capace di unire persone, creare complicità e accorciare le distanze.",
       highlight: "complicità",
-      photo: "/images/albo-doro-2025-fette-di-sole.jpg",
     },
     {
       type: "paragraph",
@@ -212,11 +220,10 @@ export const storyNarrative = {
       type: "paragraph",
       text: "E quando il fischio finale arriva, non rimane soltanto una classifica. Rimangono fotografie, video, emozioni, risate e ricordi di una giornata vissuta insieme.",
       highlight: "ricordi",
-      photo: "/images/albo-doro-2026-diesa-mcdonalds.jpg",
     },
     {
       type: "paragraph",
-      text: "L'obiettivo è costruire, edizione dopo edizione, un appuntamento capace di crescere insieme al territorio e diventare un punto di riferimento per le aziende che credono nel valore delle persone.",
+      text: "L'obiettivo è costruire, edizione dopo edizione, un appuntamento capace di crescere insieme al territorio. Oristano è dove tutto è cominciato, non dove tutto deve fermarsi: l'ambizione è portare Aziende in Campo anche oltre i suoi confini, ovunque ci sia un'azienda pronta a scendere in campo.",
       highlight: "territorio",
       photo: "/images/azione-dribbling-uno-mcdonalds.jpg",
     },
@@ -236,14 +243,15 @@ export const history = [
   { year: "2027", title: "Prossima edizione", description: "Informazioni in arrivo." }, // PLACEHOLDER
 ];
 
+// Ordine della giornata: nessun orario, per non dover rincorrere ogni cambio di programma.
 export const timeline = [
-  { time: "09:00", title: "Check-in", description: "Accredito squadre e welcome kit." },
-  { time: "10:00", title: "Inizio", description: "Prima fase a gironi." },
-  { time: "13:00", title: "Pausa", description: "Pranzo e networking." },
-  { time: "14:30", title: "Fase finale", description: "Semifinali tra le migliori squadre." },
-  { time: "17:30", title: "Finali", description: "Finale 3°-4° e finalissima." },
-  { time: "18:30", title: "Premiazione", description: "Premi, foto di gruppo e chiusura." },
-]; // PLACEHOLDER — orario indicativo, da confermare per la prossima edizione
+  { title: "Check-in", description: "Accredito squadre e welcome kit." },
+  { title: "Fase a gironi", description: "Le squadre si affrontano nella prima fase del torneo." },
+  { title: "Pausa pranzo", description: "Pranzo e networking tra le aziende." },
+  { title: "Eliminazione diretta", description: "Semifinali tra le squadre qualificate dai gironi." },
+  { title: "Finali", description: "Finale 3°-4° posto e finalissima." },
+  { title: "Premiazione", description: "Premi, foto di gruppo e chiusura della giornata." },
+];
 
 /**
  * Realtà che hanno effettivamente preso parte alle edizioni già disputate
@@ -256,7 +264,7 @@ export const timeline = [
  * dell'organizzazione.
  */
 export const participants: string[] = [
-  "Fette di Sole (Gruppo Cellino)",
+  "Fette di Sole",
   "Abbi Group",
   "Vestis",
   "Ondulor",
@@ -288,7 +296,7 @@ export const hallOfFame: HallOfFameEntry[] = [
   {
     year: "2025",
     date: "30 novembre 2025",
-    winner: "Fette di Sole (Gruppo Cellino)",
+    winner: "Fette di Sole",
     opponent: "Abbi Group",
     // score: PLACEHOLDER — punteggio esatto della finale da confermare
     note: "Il 30 novembre 2025 Fette di Sole ha vinto la finale della prima edizione contro Abbi Group.",
@@ -354,16 +362,8 @@ export type Sponsor = {
   tier: SponsorTier;
 };
 
-// PLACEHOLDER — sostituire con sponsor reali e relativi loghi in /public/logos
-export const sponsors: Sponsor[] = [
-  { name: "Main Partner", tier: "main" },
-  { name: "Gold Partner Uno", tier: "gold" },
-  { name: "Gold Partner Due", tier: "gold" },
-  { name: "Partner Uno", tier: "partner" },
-  { name: "Partner Due", tier: "partner" },
-  { name: "Partner Tre", tier: "partner" },
-  { name: "Partner Quattro", tier: "partner" },
-];
+// Nessuno sponsor confermato al momento: la sezione pubblica mostra solo l'invito a diventare partner.
+export const sponsors: Sponsor[] = [];
 
 export const faqItems = [
   {

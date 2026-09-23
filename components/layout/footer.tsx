@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import { InstagramIcon, LinkedinIcon } from "@/components/icons/social-icons";
+import { InstagramIcon, TikTokIcon } from "@/components/icons/social-icons";
 import { contact, footerLinks, siteConfig } from "@/lib/content";
 
 export function Footer() {
@@ -18,8 +18,8 @@ export function Footer() {
             <SocialLink href={contact.instagram} label="Instagram">
               <InstagramIcon size={18} />
             </SocialLink>
-            <SocialLink href={contact.linkedin} label="LinkedIn">
-              <LinkedinIcon size={18} />
+            <SocialLink href={contact.tiktok} label="TikTok">
+              <TikTokIcon size={18} />
             </SocialLink>
             <SocialLink href={`mailto:${contact.email}`} label="Email">
               <Mail size={18} />

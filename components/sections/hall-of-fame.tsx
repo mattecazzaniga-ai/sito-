@@ -126,7 +126,7 @@ function HallOfFameCard({
                         alt={`${award.name} — ${award.award} edizione ${award.year}`}
                         fill
                         sizes="(min-width: 640px) 25vw, 50vw"
-                        className="object-cover"
+                        className="object-cover object-top"
                       />
                     ) : (
                       <PlaceholderVisual

@@ -10,6 +10,7 @@ import { Participants } from "@/components/sections/participants";
 import { HowItWorks } from "@/components/sections/how-it-works";
 import { Format } from "@/components/sections/format";
 import { Timeline } from "@/components/sections/timeline";
+import { Gallery } from "@/components/sections/gallery";
 import { Sponsors } from "@/components/sections/sponsors";
 import { Registration } from "@/components/sections/registration";
 import { Faq } from "@/components/sections/faq";
@@ -36,6 +37,7 @@ export default function Home() {
         <HowItWorks />
         <Format />
         <Timeline />
+        <Gallery />
         <Sponsors />
         <Registration />
         <Faq />
