@@ -6,6 +6,8 @@ import { contact, siteConfig } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: `Informativa sulla privacy di ${siteConfig.name}.`,
+  alternates: { canonical: "/privacy-policy" },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPolicyPage() {

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Barlow, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
-import { eventInfo, siteConfig } from "@/lib/content";
+import { contact, eventInfo, siteConfig } from "@/lib/content";
 
 const barlowCondensed = Barlow_Condensed({
   variable: "--font-barlow-condensed",
@@ -68,28 +68,28 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // SportsOrganization, non SportsEvent: schema.org richiede uno startDate per
+  // Event e la data della prossima edizione non è ancora confermata. Un Event
+  // senza startDate è markup non valido (errore in Search Console) — quando la
+  // data sarà nota, aggiungere un SportsEvent dedicato con startDate reale.
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SportsEvent",
+    "@type": "SportsOrganization",
     name: siteConfig.name,
     description: siteConfig.description,
-    organizer: {
+    url: siteConfig.url,
+    sport: eventInfo.sport,
+    parentOrganization: {
       "@type": "Organization",
       name: siteConfig.organizer,
     },
-    sport: eventInfo.sport,
-    location: {
-      "@type": "Place",
-      name: eventInfo.location,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Oristano",
-        addressCountry: "IT",
-      },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: eventInfo.location,
+      addressLocality: "Oristano",
+      addressCountry: "IT",
     },
-    // PLACEHOLDER — aggiornare con data e location definitive quando confermate
-    eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+    sameAs: [contact.instagram, contact.tiktok],
   };
 
   return (

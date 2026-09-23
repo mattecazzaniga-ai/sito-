@@ -4,9 +4,20 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/sections/contact-form";
 import { contact, siteConfig } from "@/lib/content";
 
+const title = "Contatti";
+const description = `Contatta il team di ${siteConfig.name} per informazioni o per diventare partner dell'evento.`;
+
 export const metadata: Metadata = {
-  title: "Contatti",
-  description: `Contatta il team di ${siteConfig.name} per informazioni o per diventare partner dell'evento.`,
+  title,
+  description,
+  alternates: { canonical: "/contatti" },
+  openGraph: {
+    title: `${title} — ${siteConfig.name}`,
+    description,
+    url: "/contatti",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: siteConfig.name }],
+  },
+  twitter: { title: `${title} — ${siteConfig.name}`, description },
 };
 
 export default function ContattiPage() {

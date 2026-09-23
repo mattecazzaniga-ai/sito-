@@ -369,6 +369,7 @@ export const participants: Participant[] = [
 export type HallOfFameEntry = {
   year: string;
   date?: string;
+  isoDate?: string; // formato ISO 8601 (YYYY-MM-DD), per i dati strutturati
   winner: string;
   opponent?: string;
   score?: string;
@@ -386,6 +387,7 @@ export const hallOfFame: HallOfFameEntry[] = [
   {
     year: "2025",
     date: "30 novembre 2025",
+    isoDate: "2025-11-30",
     winner: "Fette di Sole",
     opponent: "Abbi Group",
     score: "3-0",
@@ -396,6 +398,7 @@ export const hallOfFame: HallOfFameEntry[] = [
   {
     year: "2026",
     date: "3 maggio 2026",
+    isoDate: "2026-05-03",
     winner: "Diesa S.r.l. / McDonald's",
     opponent: "Consorzio UNO Oristano",
     score: "3-0",

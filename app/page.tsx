@@ -15,10 +15,25 @@ import { Sponsors } from "@/components/sections/sponsors";
 import { Registration } from "@/components/sections/registration";
 import { Faq } from "@/components/sections/faq";
 import { FinalCta } from "@/components/sections/final-cta";
+import { faqItems } from "@/lib/content";
 
 export default function Home() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-green focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
@@ -38,9 +53,9 @@ export default function Home() {
         <Format />
         <Timeline />
         <Gallery />
-        <Sponsors />
-        <Registration />
         <Faq />
+        <Registration />
+        <Sponsors />
         <FinalCta />
       </main>
       <Footer />

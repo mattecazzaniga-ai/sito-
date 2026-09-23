@@ -6,6 +6,8 @@ import { contact, siteConfig } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description: `Informativa sui cookie di ${siteConfig.name}.`,
+  alternates: { canonical: "/cookie-policy" },
+  robots: { index: false, follow: true },
 };
 
 export default function CookiePolicyPage() {
