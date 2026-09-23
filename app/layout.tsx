@@ -20,7 +20,7 @@ const barlow = Barlow({
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#283560",
+  themeColor: "#273460",
 };
 
 export const metadata: Metadata = {
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "/icon.svg",
+    icon: "/icon.png",
   },
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -36,11 +37,18 @@ export function Navbar({ forceSolid = false }: { forceSolid?: boolean }) {
             : "px-5 py-6 sm:px-8"
         )}
       >
-        <Link
-          href="/#home"
-          className="font-display text-lg font-bold uppercase tracking-tight text-white sm:text-xl"
-        >
-          Aziende<span className="text-green">In</span>Campo
+        <Link href="/#home" className="flex items-center gap-2.5">
+          <Image
+            src="/images/logo-mark-white.png"
+            alt=""
+            width={515}
+            height={261}
+            className="h-7 w-auto sm:h-8"
+            priority
+          />
+          <span className="font-display text-lg font-bold uppercase tracking-tight text-white sm:text-xl">
+            Aziende<span className="text-green">In</span>Campo
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Navigazione principale">

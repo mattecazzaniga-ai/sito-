@@ -122,11 +122,27 @@ export type GalleryPhoto = {
 };
 
 /**
- * Libreria fotografica del torneo. Vuota per ora: le foto arriveranno
- * dall'organizzatore edizione dopo edizione. Non riutilizzare qui immagini
- * già impiegate altrove nel sito.
+ * Libreria fotografica del torneo. Foto dell'organizzatore, edizione dopo
+ * edizione. Non riutilizzare qui immagini già impiegate altrove nel sito.
  */
-export const galleryPhotos: GalleryPhoto[] = [];
+export const galleryPhotos: GalleryPhoto[] = [
+  {
+    src: "/images/azione-contrasto-ondulor-cellini.jpg",
+    alt: "Contrasto per il pallone tra un giocatore Ondulor e un giocatore Cellini",
+  },
+  {
+    src: "/images/azione-tiro-al-volo-ondulor.jpg",
+    alt: "Un giocatore Ondulor calcia al volo davanti a un avversario Cellini",
+  },
+  {
+    src: "/images/azione-portiere-doppia-marcatura.jpg",
+    alt: "Il portiere si prepara a un tiro ravvicinato circondato da due attaccanti",
+  },
+  {
+    src: "/images/azione-parata-diesa.jpg",
+    alt: "Il portiere si tuffa in presa bassa mentre il pallone vola sopra la traversa",
+  },
+];
 
 export const howItWorksSteps = [
   {

@@ -25,7 +25,7 @@ export function Hero() {
     <section id="home" className="relative isolate flex min-h-dvh items-end overflow-hidden bg-ink pt-32 pb-16 sm:pt-40">
       <div className="absolute inset-0 -z-10">
         <motion.div
-          className="h-full w-full"
+          className="relative h-full w-full"
           initial={{ scale: prefersReducedMotion ? 1 : 1.12 }}
           animate={{ scale: 1 }}
           transition={{ duration: 5, ease: EASE_OUT }}

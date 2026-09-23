@@ -15,7 +15,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "flex-start",
-          backgroundColor: "#283560",
+          backgroundColor: "#273460",
           padding: "80px",
           position: "relative",
         }}
@@ -27,12 +27,12 @@ export default function OpengraphImage() {
             right: 0,
             width: 420,
             height: "100%",
-            background: "linear-gradient(135deg, #177235 0%, #0d401e 100%)",
+            background: "linear-gradient(135deg, #273460 0%, #147333 100%)",
             clipPath: "polygon(40% 0, 100% 0, 100% 100%, 0% 100%)",
             display: "flex",
           }}
         />
-        <div style={{ display: "flex", fontSize: 26, color: "#14c84f", fontWeight: 700, letterSpacing: 4 }}>
+        <div style={{ display: "flex", fontSize: 26, color: "#22a855", fontWeight: 700, letterSpacing: 4 }}>
           IL TORNEO DI CALCIO A 5 TRA AZIENDE
         </div>
         <div
@@ -47,7 +47,7 @@ export default function OpengraphImage() {
           }}
         >
           <span>AZIENDE</span>
-          <span style={{ color: "#14c84f" }}>IN CAMPO</span>
+          <span style={{ color: "#22a855" }}>IN CAMPO</span>
         </div>
         <div style={{ display: "flex", fontSize: 28, color: "rgba(255,255,255,0.7)", marginTop: 32 }}>
           {siteConfig.tagline}

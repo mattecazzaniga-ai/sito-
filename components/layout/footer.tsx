@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { InstagramIcon, TikTokIcon } from "@/components/icons/social-icons";
@@ -8,9 +9,18 @@ export function Footer() {
     <footer className="bg-ink text-white">
       <div className="container-page grid gap-12 py-16 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:py-20">
         <div className="flex flex-col gap-4">
-          <span className="font-display text-2xl font-bold uppercase tracking-tight">
-            Aziende<span className="text-green">In</span>Campo
-          </span>
+          <div className="flex items-center gap-2.5">
+            <Image
+              src="/images/logo-mark-white.png"
+              alt=""
+              width={515}
+              height={261}
+              className="h-8 w-auto"
+            />
+            <span className="font-display text-2xl font-bold uppercase tracking-tight">
+              Aziende<span className="text-green">In</span>Campo
+            </span>
+          </div>
           <p className="max-w-xs text-sm leading-relaxed text-white/60">
             Evento organizzato da <span className="text-white/90">{siteConfig.organizer}</span>.
           </p>

@@ -2,11 +2,15 @@
 
 :root {
   /* Brand — sampled directly from the official logo, do not eyeball new values */
-  --color-green: #177235;
-  --color-green-dark: #0d401e;
-  --color-green-light: #14c84f;
+  --color-green: #147333;
+  --color-green-dark: #0f5626;
+  --color-green-light: #22a855;
 
-  --color-ink: #283560; /* logo navy, used as the site's dark neutral */
+  --color-navy: #273460;
+  --color-navy-dark: #1b2547;
+  --color-navy-light: #3c4d85;
+
+  --color-ink: #273460; /* logo navy, used as the site's dark neutral everywhere */
   --color-anthracite: #17171a;
   --color-anthracite-2: #202024;
   --color-anthracite-3: #2b2b30;
@@ -39,6 +43,9 @@
   --color-green: var(--color-green);
   --color-green-dark: var(--color-green-dark);
   --color-green-light: var(--color-green-light);
+  --color-navy: var(--color-navy);
+  --color-navy-dark: var(--color-navy-dark);
+  --color-navy-light: var(--color-navy-light);
   --color-ink: var(--color-ink);
   --color-anthracite: var(--color-anthracite);
   --color-anthracite-2: var(--color-anthracite-2);
