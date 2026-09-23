@@ -114,8 +114,25 @@ export type Testimonial = {
   role: string;
 };
 
-// PLACEHOLDER — recensioni reali in arrivo dall'organizzatore
-export const testimonials: Testimonial[] = [];
+// Recensioni reali raccolte dall'organizzatore, in forma anonima.
+export const testimonials: Testimonial[] = [
+  {
+    quote: "È stata un'iniziativa molto bella. Mi sono divertito tantissimo e spero di ripeterla anche l'anno prossimo.",
+    author: "Dipendente partecipante 1",
+    role: "Recensione anonima",
+  },
+  {
+    quote:
+      "L'unica cosa che posso dire, avendo partecipato a diverse iniziative analoghe, è che sono rimasto davvero sorpreso dalla riuscita in toto di questa giornata: pur essendo solo la prima edizione, posso solo fare i complimenti. Sono rimasto molto colpito dall'evento.",
+    author: "Dipendente partecipante 2",
+    role: "Recensione anonima",
+  },
+  {
+    quote: "Impressioni positivissime: tempi celeri, organizzazione puntuale, arbitri professionali e capaci.",
+    author: "Dipendente partecipante 3",
+    role: "Recensione anonima",
+  },
+];
 
 export type GalleryPhoto = {
   src: string;
@@ -321,6 +338,11 @@ export const timeline = [
   { title: "Premiazione", description: "Premi, foto di gruppo e chiusura della giornata." },
 ];
 
+export type Participant = {
+  name: string;
+  logo?: string; // logo reale fornito dall'organizzatore — se assente, si mostra l'iniziale
+};
+
 /**
  * Realtà che hanno effettivamente preso parte alle edizioni già disputate
  * di Aziende in Campo. Nessun anno, posizione o numero di squadre: solo il
@@ -331,17 +353,17 @@ export const timeline = [
  * nome che non abbia una fonte giornalistica o una conferma diretta
  * dell'organizzazione.
  */
-export const participants: string[] = [
-  "Fette di Sole",
-  "Abbi Group",
-  "Vestis",
-  "Ondulor",
-  "Catte Cup",
-  "F.lli Cellino",
-  "Cellino",
-  "Simec",
-  "Diesa S.r.l. (McDonald's)",
-  "Consorzio UNO – Università di Oristano",
+export const participants: Participant[] = [
+  { name: "Fette di Sole", logo: "/images/logos/fette-di-sole.png" },
+  { name: "Abbi Group" },
+  { name: "Vestis" },
+  { name: "Ondulor", logo: "/images/logos/ondulor.png" },
+  { name: "Catte Cup" },
+  { name: "F.lli Cellino" },
+  { name: "Cellino" },
+  { name: "Simec", logo: "/images/logos/simec.png" },
+  { name: "Diesa S.r.l. (McDonald's)" },
+  { name: "Consorzio UNO – Università di Oristano" },
 ];
 
 export type HallOfFameEntry = {

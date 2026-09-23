@@ -19,9 +19,9 @@ export default function AdminAziendePage() {
             </tr>
           </thead>
           <tbody>
-            {participants.map((name) => (
-              <tr key={name} className="border-b border-neutral-100 last:border-0">
-                <td className="px-5 py-3 font-medium text-ink">{name}</td>
+            {participants.map((participant) => (
+              <tr key={participant.name} className="border-b border-neutral-100 last:border-0">
+                <td className="px-5 py-3 font-medium text-ink">{participant.name}</td>
               </tr>
             ))}
           </tbody>
