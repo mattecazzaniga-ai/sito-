@@ -355,14 +355,14 @@ export type Participant = {
  */
 export const participants: Participant[] = [
   { name: "Fette di Sole", logo: "/images/logos/fette-di-sole.png" },
-  { name: "Abbi Group" },
-  { name: "Vestis" },
+  { name: "Abbi Group", logo: "/images/logos/abbi-group.png" },
+  { name: "Vestis", logo: "/images/logos/vestis.png" },
   { name: "Ondulor", logo: "/images/logos/ondulor.png" },
-  { name: "Catte Cup" },
-  { name: "F.lli Cellino" },
+  { name: "Catte Cup", logo: "/images/logos/catte-cup.png" },
+  { name: "F.lli Cellino", logo: "/images/logos/fratelli-cellino.png" },
   { name: "Cellino" },
   { name: "Simec", logo: "/images/logos/simec.png" },
-  { name: "Diesa S.r.l. (McDonald's)" },
+  { name: "Diesa S.r.l. (McDonald's)", logo: "/images/logos/mcdonalds.webp" },
   { name: "Consorzio UNO – Università di Oristano" },
 ];
 
