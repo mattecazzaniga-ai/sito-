@@ -64,7 +64,7 @@ export const impactStats = [
   { value: 2, suffix: "", label: "Edizioni disputate" },
   { value: 200, suffix: "+", label: "Atleti in campo" },
   { value: 500, suffix: "+", label: "Presenze totali" },
-  { value: 10, suffix: "", label: "Aziende coinvolte" },
+  { value: 9, suffix: "", label: "Aziende coinvolte" },
 ];
 
 export const valuesContent = {
@@ -472,6 +472,11 @@ export const faqItems = [
     question: "Quante persone servono per formare una squadra?",
     answer:
       "Ogni squadra è formata da un minimo di 5 a un massimo di 12 giocatori, più 2 accompagnatori/allenatori.",
+  },
+  {
+    question: "Un'azienda può iscrivere più di una squadra?",
+    answer:
+      "Sì: alcune aziende hanno già partecipato con più squadre. Se vuoi iscriverne più di una, indicalo nel campo note del form di iscrizione.",
   },
   {
     question: "Possono partecipare anche i colleghi che non giocano?",
